@@ -1,39 +1,38 @@
-# receive_message.py
+# features/receive/receive_message.py
 
 import time
 from selenium.webdriver.common.by import By
-from utils.helpers import find_element_with_retry
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 def receive_messages(driver):
-    """
-    Receive and process incoming messages on WhatsApp Web.
+    try:
+        # Set a maximum timeout for message checking
+        timeout = 300  # 5 minutes (adjust as needed)
 
-    :param driver: WebDriver instance
-    """
-    while True:
-        try:
-            # Find all message elements in the chat
-            message_elements = driver.find_elements(By.XPATH, "//div[@class='copyable-text']")
+        while True:
+            # Wait for the chat container to load
+            chat_container = WebDriverWait(driver, timeout).until(
+                EC.presence_of_element_located(
+                    (By.XPATH, '//*[@id="main"]/div[3]/div/div/div[3]/div')
+                )
+            )
 
-            for message_element in message_elements:
-                message_text = message_element.text
-                # Process the message text as needed (e.g., reply, store, analyze)
+            # Get the list of messages
+            messages = chat_container.find_elements(By.XPATH, './/div[contains(@class, "message")]')
 
-            # Wait briefly before checking for new messages again
-            time.sleep(2)
-        except Exception as e:
-            print(f"An error occurred while receiving messages: {str(e)}")
+            # Process each message
+            for message in messages:
+                sender_name = message.find_element(By.XPATH, './/span[@class="bP"]')
+                message_text = message.find_element(By.XPATH, './/span[@class="selectable-text"]').text
 
-# Example usage
-if __name__ == "__main__":
-    from selenium import webdriver
+                print(f"Received message from {sender_name.text}: {message_text}")
 
-    # Initialize the WebDriver (e.g., Chrome)
-    driver = webdriver.Chrome()
-    driver.get("https://web.whatsapp.com/")
+            # Check for new messages every 5 seconds
+            time.sleep(5)
 
-    # Wait for the user to scan the QR code manually for 10 seconds
-    input("Scan the QR code manually and press Enter after scanning...")
+    except KeyboardInterrupt:
+        print("Receive message loop terminated.")
 
-    # Call the receive_messages function to start monitoring messages
-    receive_messages(driver)
+# Usage Example:
+# Start receiving and processing messages in a separate thread or process
