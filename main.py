@@ -32,7 +32,7 @@ def main():
     except Exception as e:
         print("An error occurred:", str(e))
     finally:
-        # Log out and close the browser
+        # Log out and close the browser.
         whatsapp_login.logout()
 
 if __name__ == "__main__":
