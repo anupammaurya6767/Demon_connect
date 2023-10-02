@@ -60,27 +60,3 @@ whatsapp_api_project/<br/>
 └── 📄 sample_usage.py # Sample script to use the WhatsApp API<br/>
 
 This structured project organization should help you manage different aspects of your WhatsApp API more effectively. Each module inside the `features` directory can handle specific functionalities like sending messages, images, videos, receiving messages, and logging in. You can develop and maintain these modules separately, making your codebase more organized and maintainable.
-
-Here's a sample script (sample_usage.py) to demonstrate how to use this WhatsApp API structure:
-```
-from api import whatsapp_api
-
-if __name__ == "__main__":
-    # Initialize the WhatsApp API
-    whatsapp = whatsapp_api.WhatsAppAPI()
-
-    # Login to WhatsApp Web
-    whatsapp.login("your_phone_number", "your_password")
-
-    # Example: Send a message
-    whatsapp.send_message("contact_name", "Hello, this is a test message!")
-
-    # Example: Receive and process incoming messages
-    while True:
-        incoming_message = whatsapp.receive_message()
-        if incoming_message:
-            print(f"Received message: {incoming_message}")
-            # Process the message as needed
-
-    # To log out, call whatsapp.logout()
-```
