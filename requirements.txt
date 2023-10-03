@@ -1,1 +1,4 @@
-selenium==3.141.0 
+selenium==3.141.0
+webdriver-manager==3.4.2
+qrcode[pil]==7.3
+Pillow==8.2.0
