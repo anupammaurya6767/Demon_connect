@@ -1,7 +1,7 @@
 # 🌟 Demon Connect - WhatsApp API 🌟
 
 <p align="center">
-  <img src="https://your-project-logo-url.com" alt="Demon Connect Logo">
+  <img src="https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/demon_connect.png" alt="Demon Connect Logo">
 </p>
 
 <p align="center">
