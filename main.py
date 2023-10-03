@@ -1,39 +1,48 @@
 # main.py
 
-from selenium import webdriver
-from features.login.login_whatsapp import WhatsAppLogin
-from features.send.send_message import send_message
-from features.send.send_image import send_image
-from features.send.send_video import send_video
-from features.receive.receive_message import receive_messages
+from api.whatsapp_api import Demon
 
 def main():
     try:
-        # Initialize the Chrome WebDriver (you may need to specify the driver path)
-        driver = webdriver.Chrome(executable_path="drivers/chromedriver.exe")
+        # Create an instance of the Demon class
+        whatsapp_demon = Demon()
 
-        # Initialize WhatsAppLogin and log in
-        whatsapp_login = WhatsAppLogin(driver)
-        whatsapp_login.login()
+        # Log in to WhatsApp Web
+        whatsapp_demon.login()
 
-        # Example: Send a text message
-        send_message(driver, "Contact Name", "Hello, this is a test message!")
+        # Send a message
+        message = "Hello, this is a test message."
+        whatsapp_demon.send_message(message)
 
-        # Example: Send an image
-        send_image(driver, "Contact Name", "path/to/image.jpg")
+        # Send an image (provide the path to the image file)
+        image_path = "path/to/your/image.jpg"
+        whatsapp_demon.send_image(image_path)
 
-        # Example: Send a video
-        send_video(driver, "Contact Name", "path/to/video.mp4")
+        # Send a video (provide the path to the video file)
+        video_path = "path/to/your/video.mp4"
+        whatsapp_demon.send_video(video_path)
 
-        # Example: Receive and process messages (this should run in a separate thread)
-        # Note: You may need to implement more advanced logic for message handling
-        receive_messages(driver)
+        # Receive messages
+        received_messages = whatsapp_demon.receive_message()
+        print("Received Messages:")
+        for message in received_messages:
+            print(message)
+
+        # Send a group message
+        group_name = "YourGroupName"
+        group_message = "This is a group message."
+        whatsapp_demon.send_group_message(group_name, group_message)
+
+        # Delete a message in a group chat
+        group_name = "YourGroupName"
+        message_to_delete = "Message to delete"
+        whatsapp_demon.delete_message(group_name, message_to_delete)
 
     except Exception as e:
         print("An error occurred:", str(e))
     finally:
-        # Log out and close the browser.
-        whatsapp_login.logout()
+        # Close the browser when done
+        whatsapp_demon.close()
 
 if __name__ == "__main__":
     main()
