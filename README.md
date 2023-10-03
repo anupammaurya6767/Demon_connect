@@ -56,10 +56,10 @@ Unleash the demon within as you explore the capabilities of this WhatsApp API. T
 
 2. Include Demon Connect in your Python project:
    ```python
-   from demon_connect import WhatsAppAPI
+   from api.whatsapp_api import Demon
 
    # Initialize the API
-   whatsapp_api = WhatsAppAPI()
+   whatsapp_api = Demon()
 
    # Use the API to send messages and interact with WhatsApp
    ```
