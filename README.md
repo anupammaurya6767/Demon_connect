@@ -5,12 +5,12 @@
 </p>
 
 <p align="center">
-  <a href="#overview">Overview</a> •
-  <a href="#features">Features</a> •
-  <a href="#usage">Usage</a> •
-  <a href="#installation">Installation</a> •
-  <a href="#contributing">Contributing</a> •
-  <a href="#license">License</a>
+  <a href="#Overview">Overview</a> •
+  <a href="#Features">Features</a> •
+  <a href="#Usage">Usage</a> •
+  <a href="#Installation">Installation</a> •
+  <a href="#Contributing">Contributing</a> •
+  <a href="#License">License</a>
 </p>
 
 ## Overview 👹
