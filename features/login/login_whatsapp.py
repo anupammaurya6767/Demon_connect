@@ -3,11 +3,12 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 import qrcode
+from utils.constants import WHATSAPP_WEB_URL
 
 def login_whatsapp(driver):
     try:
         # Open WhatsApp Web
-        driver.get("https://web.whatsapp.com/")
+        driver.get(WHATSAPP_WEB_URL)
 
         # Wait for the QR code to be scanned by the user
         qr_code_element = WebDriverWait(driver, 600).until(
