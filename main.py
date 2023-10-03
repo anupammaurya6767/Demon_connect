@@ -1,11 +1,13 @@
 # main.py
-
+from utils.constants import BROWSER
+from utils.constants import BROWSER_PATH
+from utils.constants import CHROME_DRIVER_PATH
 from api.whatsapp_api import Demon
 
 def main():
     try:
         # Create an instance of the Demon class
-        whatsapp_demon = Demon()
+        whatsapp_demon = Demon(BROWSER,BROWSER_PATH,CHROME_DRIVER_PATH)
 
         # Log in to WhatsApp Web
         whatsapp_demon.login()
