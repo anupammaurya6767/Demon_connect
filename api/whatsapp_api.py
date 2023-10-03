@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from features.login.login_whatsapp import login_whatsapp
-from features.send.send_message import send_message
+from features.send.send_message import send_messages
 from features.send.send_image import send_image
 from features.send.send_video import send_video
 from features.receive.receive_message import receive_message
@@ -23,14 +23,14 @@ class Demon:
     def login(self):
         login_whatsapp(self.driver)
 
-    def send_message(self, message):
-        send_message(self.driver, message)
+    def send_message(self,contact_name, message):
+        send_messages(self.driver,contact_name, message)
 
-    def send_image(self, image_path):
-        send_image(self.driver, image_path)
+    def send_image(self,contact_name, image_path):
+        send_image(self.driver,contact_name, image_path)
 
-    def send_video(self, video_path):
-        send_video(self.driver, video_path)
+    def send_video(self,contact_name, video_path):
+        send_video(self.driver,contact_name, video_path)
 
     def receive_message(self):
         return receive_message(self.driver)
