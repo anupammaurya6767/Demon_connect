@@ -1,0 +1,43 @@
+name: Run main.py on Pull Request
+
+on:
+  pull_request:
+    branches:
+      - main  # Adjust the branch name as needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x  # Specify the Python version you need
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt  # Adjust if needed
+
+      - name: Run main.py
+        run: python main.py
+
+      - name: Check for errors
+        id: check-errors
+        run: |
+          if [ $? -eq 0 ]; then
+            echo "Success: The main.py script ran without errors."
+            exit 0
+          else
+            echo "Failed: The main.py script encountered errors."
+            exit 1
+          fi
+
+      - name: Set PR status
+        if: always()
+        uses: unsplash/comment-on-pr@v1
+        with:
+          msg: |
+            The status of running `main.py` is ${{ job.status }}.
