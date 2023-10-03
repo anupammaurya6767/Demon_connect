@@ -12,13 +12,38 @@ from features.send.send_group_message import send_group_message
 from features.delete.delete_message import delete_message
 
 class Demon:
-    def __init__(self):
-        self.driver = self.initialize_driver()
+    def __init__(self, page, browser, browser_path, driver_path):
+        self.page = page
+        self.browser = browser
+        self.browser_path = browser_path
+        self.driver_path = driver_path
+        self.driver = self.load_driver()
 
-    def initialize_driver(self):
-        chrome_options = Options()
-        chrome_options.add_argument("--user-data-dir=./User_Data")  # Modify this path as needed
-        return webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+        # Open the web page with the given browser
+        self.driver.get(self.page)
+
+    def load_driver(self):
+        """
+        Load the Selenium driver depending on the browser
+        (Edge and Safari are not running yet)
+        """
+        driver = None
+        if self.browser == 'firefox':
+            firefox_profile = webdriver.FirefoxProfile(
+                self.browser_path)
+            driver = webdriver.Firefox(firefox_profile)
+        elif self.browser == 'chrome':
+            chrome_options = webdriver.ChromeOptions()
+            if self.browser_path:
+                chrome_options.add_argument('user-data-dir=' +
+                                            self.browser_path)
+            driver = webdriver.Chrome(self.driver_path, options=chrome_options)
+        elif self.browser == 'safari':
+            pass
+        elif self.browser == 'edge':
+            pass
+
+        return driver
 
     def login(self):
         login_whatsapp(self.driver)
