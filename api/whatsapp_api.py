@@ -1,5 +1,4 @@
 # api/whatsapp_api.py
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
@@ -12,15 +11,12 @@ from features.send.send_group_message import send_group_message
 from features.delete.delete_message import delete_message
 
 class Demon:
-    def __init__(self, page, browser, browser_path, driver_path):
-        self.page = page
+    def __init__(self, browser, browser_path, driver_path):
         self.browser = browser
         self.browser_path = browser_path
         self.driver_path = driver_path
         self.driver = self.load_driver()
 
-        # Open the web page with the given browser
-        self.driver.get(self.page)
 
     def load_driver(self):
         """
