@@ -6,13 +6,13 @@ def send_image(driver, contact_name, image_path):
     try:
         # Locate the attachment button
         attachment_button = driver.find_element_by_xpath(
-            '//*[@id="main"]/footer/div/div/span[1]/div[1]/div/span'
+            '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/div/div'
         )
         attachment_button.click()
 
         # Select the photo/video option
         photo_video_option = driver.find_element_by_xpath(
-            '//input[@accept="image/*,video/mp4,video/3gpp,video/quicktime"]'
+            '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/span/div/ul/div/div[2]/li'
         )
         photo_video_option.send_keys(image_path)
 

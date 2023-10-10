@@ -3,10 +3,10 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from features.login.login_whatsapp import login_whatsapp
-from features.send.send_message import send_messages
+from features.send.send_message import send_message
 from features.send.send_image import send_image
 from features.send.send_video import send_video
-from features.receive.receive_message import receive_message
+from features.receive.receive_message import receive_messages
 from features.send.send_group_message import send_group_message
 from features.delete.delete_message import delete_message
 
@@ -28,12 +28,12 @@ class Demon:
             firefox_profile = webdriver.FirefoxProfile(
                 self.browser_path)
             driver = webdriver.Firefox(firefox_profile)
-        elif self.browser == 'chrome':
+        elif self.browser == 'Chrome':
             chrome_options = webdriver.ChromeOptions()
             if self.browser_path:
                 chrome_options.add_argument('user-data-dir=' +
                                             self.browser_path)
-            driver = webdriver.Chrome(self.driver_path, options=chrome_options)
+            driver = webdriver.Chrome(executable_path=f"{self.driver_path}", options=chrome_options)
         elif self.browser == 'safari':
             pass
         elif self.browser == 'edge':
@@ -45,7 +45,7 @@ class Demon:
         login_whatsapp(self.driver)
 
     def send_message(self,contact_name, message):
-        send_messages(self.driver,contact_name, message)
+        send_message(self.driver,contact_name, message)
 
     def send_image(self,contact_name, image_path):
         send_image(self.driver,contact_name, image_path)
@@ -54,7 +54,7 @@ class Demon:
         send_video(self.driver,contact_name, video_path)
 
     def receive_message(self):
-        return receive_message(self.driver)
+        return receive_messages(self.driver)
 
     def send_group_message(self, group_name, message):
         send_group_message(self.driver, group_name, message)
