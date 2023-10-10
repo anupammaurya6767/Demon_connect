@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-def send_message(driver, group_name, message):
+def send_group_message(driver, group_name, message):
     try:
         # Find the search input box to locate the group
         search_box = WebDriverWait(driver, 10).until(
@@ -16,7 +16,7 @@ def send_message(driver, group_name, message):
 
         # Wait for the chat to load
         WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, '//*[@id="main"]/header/div[2]/div[1]/div[1]/span'))
+            EC.presence_of_element_located((By.XPATH, '//div[@class="_21S-L"]/span'))
         )
 
         # Locate the message input box
