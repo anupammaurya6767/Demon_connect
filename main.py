@@ -24,6 +24,7 @@ def main():
         print("Received Messages:")
         for message in received_messages:
             print(message)
+            
         # Send an image (provide the path to the image file)
         image_path = r"C:\Users\hp\Pictures\WhatsApp Image 2021-12-11 at 7.19.40 PM.jpeg"
         whatsapp_demon.send_image(contact,image_path)
@@ -42,8 +43,8 @@ def main():
         message_to_delete = "Message to delete"
         whatsapp_demon.delete_message(group_name, message_to_delete)
 
-    # except Exception as e:
-    #     print("An error occurred:", str(e))
+    except Exception as e:
+        print("An error occurred:", str(e))
     finally:
         # Close the browser when done
         if whatsapp_demon is not None:
