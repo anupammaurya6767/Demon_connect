@@ -2,9 +2,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-import qrcode
 from utils.constants import WHATSAPP_WEB_URL
-from PIL import Image
 import qrcode_terminal
 from time import sleep
 
@@ -13,15 +11,11 @@ def login_whatsapp(driver):
     try:
 
         WebDriverWait(driver,20).until(
-                EC.presence_of_element_located((By.XPATH,"//div[@class='_2Ts6i _3RGKj']/header"))
+                EC.presence_of_element_located((By.XPATH,"//div[@class='_2Ts6i _3RGKj']/header"))            #finding the whatsapp header element if the whatsapp is already logged in 
             )
-
-        # header =driver.find_element(By.XPATH,"")
+        
         print("Successfully logged in to WhatsApp Web!")
-
-
-
-
+        
     except:
 
         try:
@@ -32,22 +26,18 @@ def login_whatsapp(driver):
             )
             logged_in = False
 
-            qr_code_element = WebDriverWait(driver, 600).until(
+            qr_code_element = WebDriverWait(driver, 600).until(                                    
                 EC.presence_of_element_located((By.XPATH, '//div[@class="_19vUU"]'))
             )
 
             print("Scan the QR code to log in to WhatsApp Web.")
 
-            # header =driver.find_element(By.XPATH,"//div[@class='_2Ts6i _3RGKj']/header")
             while True:
                 # Wait for the QR code to be scanned by the user
-                # qr_code_element = WebDriverWait(driver, 600).until(
-                #     EC.presence_of_element_located((By.XPATH, '//*[@class="_19vUU"]'))
-                # )
                 try:
                 # Get the QR code image source
                     qr_code_image_dataref = qr_code_element.get_attribute("data-ref")
-                    qrcode_terminal.draw(qr_code_image_dataref)
+                    qrcode_terminal.draw(qr_code_image_dataref)                #printing the qr in the terminal so that the user can scan from terminal directly
                 except:
                     pass
                 # Generate and display the QR code in the terminal
