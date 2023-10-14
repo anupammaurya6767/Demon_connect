@@ -3,7 +3,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from features.extras.get_list_of_messages import get_list_of_messages
-
 def fetch_all_unread_chats(driver, limit=True, top=50):
     """📬 Fetches all unread chats.
 
@@ -25,7 +24,7 @@ def fetch_all_unread_chats(driver, limit=True, top=50):
                 (By.XPATH, '//div[@id="pane-side"]/div[2]')
             )
         )
-        list_of_messages = get_list_of_messages()
+        list_of_messages = get_list_of_messages(driver)
         read_names = []
         names = []
         names_data = []
@@ -45,7 +44,7 @@ def fetch_all_unread_chats(driver, limit=True, top=50):
             pane.send_keys(Keys.PAGE_DOWN)
             pane.send_keys(Keys.PAGE_DOWN)
 
-            list_of_messages = get_list_of_messages()
+            list_of_messages = get_list_of_messages(driver)
             if (
                 last_counter == counter
                 and counter

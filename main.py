@@ -14,6 +14,13 @@ def main():
         # Log in to WhatsApp Web
         whatsapp_demon.login()
 
+        @whatsapp_demon.event
+        def on_message(chat):
+            print(f"New message from {chat.name}: {chat.message}")
+
+        chat = whatsapp_demon.open("Anupam Maurya")
+        chat.send("HI")
+
         # Send a message
         # message = "heyy"
         # contact = "Grp"
@@ -46,8 +53,9 @@ def main():
         # whatsapp_demon.delete_message(group_name, message_to_delete)
 
         # tag all in group
-        group_name = "Grp"
-        whatsapp_demon.tag_all(group_name)
+        # group_name = "Grp"
+        # whatsapp_demon.tag_all(group_name)
+
 
     except Exception as e:
         print("An error occurred:", str(e))
