@@ -4,9 +4,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+from time import sleep
 
 def delete_message(driver, group_name, message):
     try:
+        action = ActionChains(driver)
         search_box = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '//div[@class="to2l77zo gfz4du6o ag5g9lrv bze30y65 kao4egtt qh0vvdkp"]/p'))
         )
@@ -28,6 +31,8 @@ def delete_message(driver, group_name, message):
         for msg in sent_message_list:
             print(msg.text)
             if message in msg.text:
+                action.move_to_element(msg).perform()
+                sleep(5)
                 dropdown = WebDriverWait(driver,10).until(
                     EC.presence_of_element_located((By.XPATH,'//*[@id="main"]/div[2]/div/div[2]/div[3]/div[128]/div/div/div[1]/div[1]/span[2]/div/div')))
 
