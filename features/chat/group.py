@@ -20,7 +20,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 @dataclass(init=False)
 class Group(chat.Conversation):
-    """A group in WhatsApp. Should not be initialized directly, use `whatsappy.Whatsapp.open` instead.
+    """A group in WhatsApp. Should not be initialized directly, use `whatsapp_demon.open` instead.
 
     #### Properties
         * subject (str): The subject of the group.
