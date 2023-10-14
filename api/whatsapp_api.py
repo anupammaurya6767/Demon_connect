@@ -33,6 +33,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import TimeoutException, StaleElementReferenceException
 from utils.handler import *
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 class Demon:
     def __init__(self, browser, browser_path, driver_path):
@@ -79,6 +80,19 @@ class Demon:
             raise InvalidEventException(f"Invalid event: {func.__name__}")
 
         self._callbacks[func.__name__] = func
+
+    def _search_chat(self, chat: str) -> WebElement:
+        search = self.driver.find_element(By.CSS_SELECTOR, Sorce.SEARCH_BAR)
+        send_keys_slowly(search, chat)
+        WebDriverWait(self.driver, 5).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, Sorce.SEARCH_BAR_CLEAR))
+        )
+
+        return search
+
+    def _clear_search_bar(self) -> None:
+        self.driver.find_element(By.CSS_SELECTOR, Sorce.SEARCH_BAR_CLEAR).click()
+
     def open(self, chat: str) -> (Chat | Group | None):
         """Opens a chat with the specified name or phone number
 

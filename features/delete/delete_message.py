@@ -64,6 +64,3 @@ def delete_message(driver, group_name, message):
     except Exception as e:
         print(f"An error occurred while deleting the message: {str(e)}")
 
-# Usage Example:
-# Call delete_message(driver, group_name, message) function in your main.py script
-# to delete a specific message in a WhatsApp group.
