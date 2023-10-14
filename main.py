@@ -22,39 +22,23 @@ def main():
         chat.send("HI")
 
         # Send a message
-        # message = "heyy"
-        # contact = "Grp"
-        # whatsapp_demon.send_message(contact,message)
-
-        # Receive messages
-        # received_messages = whatsapp_demon.receive_message()
-        # print("Received Messages:")
-        # for message in received_messages:
-        #     print(message)
+        message = "heyy"
+        contact = "Grp"
+        whatsapp_demon.send_message(contact,message)
             
         # Send an image (provide the path to the image file)
-        # image_path = r"C:\Users\raman\Downloads\aatman.jpg"
-        # contact = "Grp"
-        # whatsapp_demon.send_image(contact,image_path)
+        image_path = r"C:\Users\raman\Downloads\aatman.jpg"
+        contact = "Grp"
+        whatsapp_demon.send_image(contact,image_path)
 
 
         # Send a video (provide the path to the video file)
-        # video_path = "path/to/your/video.mp4"
-        # whatsapp_demon.send_video(video_path)
-
-        # Send a group message
-        # group_name = "YourGroupName"
-        # group_message = "This is a group message."
-        # whatsapp_demon.send_group_message(group_name, group_message)
-
-        # Delete a message in a group chat
-        # group_name = "YourGroupName"
-        # message_to_delete = "Message to delete"
-        # whatsapp_demon.delete_message(group_name, message_to_delete)
+        video_path = "path/to/your/video.mp4"
+        whatsapp_demon.send_video(contact,video_path)
 
         # tag all in group
-        # group_name = "Grp"
-        # whatsapp_demon.tag_all(group_name)
+        group_name = "Grp"
+        whatsapp_demon.tag_all(group_name)
 
 
     except Exception as e:
