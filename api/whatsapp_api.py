@@ -6,9 +6,17 @@ from features.login.login_whatsapp import login_whatsapp
 from features.send.send_message import send_message
 from features.send.send_image import send_image
 from features.send.send_video import send_video
-from features.receive.receive_message import receive_messages
-from features.send.send_group_message import send_group_message
 from features.delete.delete_message import delete_message
+from features.tagall.tagall import tag_all
+from features.extras.fetch_all_unread_chats import fetch_all_unread_chats
+from features.extras.get_list_of_messages import get_list_of_messages
+from features.send.send_file import send_file
+from features.logout.logout import logout
+from typing import Optional
+from pathlib import Path
+from features.extras.get_list_of_messages import get_list_of_messages
+
+
 
 class Demon:
     def __init__(self, browser, browser_path, driver_path):
@@ -53,14 +61,29 @@ class Demon:
     def send_video(self,contact_name, video_path):
         send_video(self.driver,contact_name, video_path)
 
-    def receive_message(self):
-        return receive_messages(self.driver)
-
-    def send_group_message(self, group_name, message):
-        send_group_message(self.driver, group_name, message)
-
     def delete_message(self, group_name, message):
         delete_message(self.driver, group_name, message)
+    
+    def tag_all(self, group_name):
+        tag_all(self.driver, group_name)
+
+    def get_list_of_messages(self):
+        get_list_of_messages(self.driver)
+
+    def send_file(self, contact_name, filename: Path, message: Optional[str] = None):
+        send_file(self.driver, contact_name, filename, message)
+
+    def send_image(self,contact_name, picture: Path, message: Optional[str] = None):
+        send_image(self.driver,contact_name, picture, message)
+    
+    def send_video(self,contact_name, video: Path, message: Optional[str] = None):
+        send_video(self.driver,contact_name, video, message)
+    
+    def fetch_all_unread_chats(self, limit=True, top=50):
+        fetch_all_unread_chats(self.driver, limit, top)
+
+    def logout(self):
+        logout(self.driver)
 
     def close(self):
         self.driver.quit()

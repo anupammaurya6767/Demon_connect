@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from utils.constants import WHATSAPP_WEB_URL
-import qrcode_terminal
+# import qrcode_terminal
 from time import sleep
 
 def login_whatsapp(driver):
@@ -34,12 +34,12 @@ def login_whatsapp(driver):
 
             while True:
                 # Wait for the QR code to be scanned by the user
-                try:
-                # Get the QR code image source
-                    qr_code_image_dataref = qr_code_element.get_attribute("data-ref")
-                    qrcode_terminal.draw(qr_code_image_dataref)                #printing the qr in the terminal so that the user can scan from terminal directly
-                except:
-                    pass
+                # try:
+                # # Get the QR code image source
+                #     qr_code_image_dataref = qr_code_element.get_attribute("data-ref")
+                #     qrcode_terminal.draw(qr_code_image_dataref)                #printing the qr in the terminal so that the user can scan from terminal directly
+                # except:
+                #     pass
                 # Generate and display the QR code in the terminal
 
                 try:

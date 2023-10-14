@@ -1,34 +1,69 @@
-# features/send/send_image.py
-
+import os
+from typing import Optional
+from pathlib import Path
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import (
+    NoSuchElementException,
+)
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
+from features.extras.send_attachment import send_attachment
+from features.extras.add_caption import add_caption
+from features.extras.find_attachment import find_attachment
+import time
 
-def send_image(driver, contact_name, image_path):
+
+
+def send_image(driver,contact_name, picture: Path, message: Optional[str] = None):
     try:
-        # Locate the attachment button
-        attachment_button = driver.find_element_by_xpath(
-            '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/div/div'
+         #finding the contact we have to send msg to -
+        #finding the search box for the contacts
+        search_box = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '//div[@class="to2l77zo gfz4du6o ag5g9lrv bze30y65 kao4egtt qh0vvdkp"]/p'))
         )
-        attachment_button.click()
+        search_box.clear()
+        search_box.send_keys(contact_name)
+        search_box.send_keys(Keys.ENTER)
 
-        # Select the photo/video option
-        photo_video_option = driver.find_element_by_xpath(
-            '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/span/div/ul/div/div[2]/li'
+        
+        #finding the name of the contact from the list after searching 
+        name_find = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '//div[@class="_21S-L"]/span'))
         )
-        photo_video_option.send_keys(image_path)
+        if name_find.get_attribute("title") == contact_name:
+            name_find.click()
 
-        # Wait for the image to be attached
-        driver.implicitly_wait(5)
-
-        # Click the send button
-        send_button = driver.find_element_by_xpath(
-            '//*[@id="app"]/div/div/div[2]/div[2]/span/div/span/div/div/div[2]/span/div/div'
+        filename = os.path.realpath(picture)
+        find_attachment(driver)
+        # Find the input element for the image
+        imgButton = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located(
+                (
+                    By.XPATH,
+                    '/html/body/div[1]/div/div/div[5]/div/footer/div[1]/div/span[2]/div/div[1]/div/div/span/div/ul/div/div[2]/li/div/input',
+                )
+            )
         )
-        send_button.click()
-
-        print(f"Image sent to {contact_name}: {image_path}")
-
-    except Exception as e:
-        print(f"Failed to send an image to {contact_name}: {str(e)}")
-
-# Usage Example:
-# send_image(driver, "Contact Name", "path/to/image.jpg")
+        imgButton.send_keys(filename)
+        if message:
+            # Add an optional message
+            add_caption(driver,message, media_type="image")
+        send_attachment(driver)
+         # Wait for the pending clock icon to show and disappear
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located(
+                (By.XPATH, '//*[@id="main"]//*[@data-icon="msg-time"]')
+            )
+        )
+        WebDriverWait(driver, 10).until_not(
+            EC.presence_of_element_located(
+                (By.XPATH, '//*[@id="main"]//*[@data-icon="msg-time"]')
+            )
+        )
+        print("✅ Message sent successfully.")
+    except (NoSuchElementException, Exception) as bug:
+        print(f"❌ Failed to send a message to {contact_name} - {bug}")
+    finally:
+        print("🏁 send_picture() finished running!")

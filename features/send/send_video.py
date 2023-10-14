@@ -1,34 +1,79 @@
-# features/send/send_video.py
-
+import os
+from typing import Optional
+from pathlib import Path
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import (
+    NoSuchElementException,
+)
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
+from features.extras.convert_bytes_to import convert_bytes_to
+from features.extras.send_attachment import send_attachment
+from features.extras.add_caption import add_caption
+from features.extras.find_attachment import find_attachment
 
-def send_video(driver, contact_name, video_path):
+def send_video(driver,contact_name, video: Path, message: Optional[str] = None):
+    """📹 Sends a video to a target user if it's less than 14MB.
+
+    Args:
+        video (Path): The video file to be sent.
+        message (str, optional): An optional message to include with the video. Defaults to None.
+    """
     try:
-        # Locate the attachment button
-        attachment_button = driver.find_element_by_xpath(
-            '//*[@id="main"]/footer/div/div/span[1]/div[1]/div/span'
+        #finding the contact we have to send msg to -
+        #finding the search box for the contacts
+        search_box = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '//div[@class="to2l77zo gfz4du6o ag5g9lrv bze30y65 kao4egtt qh0vvdkp"]/p'))
         )
-        attachment_button.click()
+        search_box.clear()
+        search_box.send_keys(contact_name)
+        search_box.send_keys(Keys.ENTER)
 
-        # Select the photo/video option
-        photo_video_option = driver.find_element_by_xpath(
-            '//input[@accept="image/*,video/mp4,video/3gpp,video/quicktime"]'
+        
+        #finding the name of the contact from the list after searching 
+        name_find = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, '//div[@class="_21S-L"]/span'))
         )
-        photo_video_option.send_keys(video_path)
+        if name_find.get_attribute("title") == contact_name:
+            name_find.click()
 
-        # Wait for the video to be attached
-        driver.implicitly_wait(5)
+        filename = os.path.realpath(video)
+        f_size = os.path.getsize(filename)
+        x = convert_bytes_to(f_size, "MB")
 
-        # Click the send button
-        send_button = driver.find_element_by_xpath(
-            '//*[@id="app"]/div/div/div[2]/div[2]/span/div/span/div/div/div[2]/span/div/div'
-        )
-        send_button.click()
+        if x < 14:
+            # File is less than 14MB
+            find_attachment(driver)
+            # To send a Video
+            video_button = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located(
+                    (
+                        By.XPATH,
+                        '/html/body/div[1]/div/div/div[5]/div/footer/div[1]/div/span[2]/div/div[1]/div/div/span/div/ul/div/div[2]/li/div/input',
+                    )
+                )
+            )
 
-        print(f"Video sent to {contact_name}: {video_path}")
-
-    except Exception as e:
-        print(f"Failed to send a video to {contact_name}: {str(e)}")
-
-# Usage Example:
-# send_video(driver, "Contact Name", "path/to/video.mp4")
+            video_button.send_keys(filename)
+            if message:
+                add_caption(driver,message, media_type="video")
+            send_attachment(driver)
+             # Wait for the pending clock icon to show and disappear
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located(
+                    (By.XPATH, '//*[@id="main"]//*[@data-icon="msg-time"]')
+                )
+            )
+            WebDriverWait(driver, 10).until_not(
+                EC.presence_of_element_located(
+                    (By.XPATH, '//*[@id="main"]//*[@data-icon="msg-time"]')
+                )
+            )
+            print("✅ Message sent successfully.")
+        else:
+            print("🚫 Video larger than 14MB")
+    except (NoSuchElementException, Exception) as bug:
+        print(f"❌ Failed to send a video - {bug}")
+    finally:
+        print("📹 send_video() finished running!")

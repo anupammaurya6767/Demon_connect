@@ -37,15 +37,17 @@ def send_message(driver, contact_name, message, _2vDPL=None):
         input_box.send_keys(message)
         input_box.send_keys(Keys.ENTER)
 
-        #finding the last msg from the message container
-        latest_message = WebDriverWait(driver,20).until(EC.presence_of_element_located((By.XPATH,'//*[@id="main"]/div[2]/div/div[2]/div[3]/div[34]/div/div')))
-        #verifing if the message is sent or not
-        double_tick = WebDriverWait(latest_message,20).until(EC.presence_of_element_located((By.XPATH,'//*[@id="main"]/div[2]/div/div[2]/div[3]/div[34]/div/div/div[1]/div[1]/div[1]/div/div[2]/div/div')))
-
-        if double_tick:
-            print(f"message sent successfully to {contact_name}")
-        else:
-            print(f"failed to send a message to {contact_name}")
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located(
+                (By.XPATH, '//*[@id="main"]//*[@data-icon="msg-time"]')
+            )
+        )
+        WebDriverWait(driver, 10).until_not(
+            EC.presence_of_element_located(
+                (By.XPATH, '//*[@id="main"]//*[@data-icon="msg-time"]')
+            )
+        )
+        print("✅ Message sent successfully.")
 
     except Exception as e:
         print(f"Failed to send a message to {contact_name}: {str(e)}")
