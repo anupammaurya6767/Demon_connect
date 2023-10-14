@@ -16,7 +16,7 @@ from utils.handler import *
 
 @dataclass(init=False)
 class Chat(chat.Conversation):
-    """A chat in WhatsApp. Should not be initialized directly, use `whatsappy.Whatsapp.open` instead.
+    """A chat in WhatsApp. Should not be initialized directly, use `whatsapp_demon.open` instead.
 
     #### Properties
         * name (str): The name of the chat.
