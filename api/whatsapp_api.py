@@ -22,29 +22,25 @@ from utils.exceptions import InvalidEventException
 from utils.handler import *
 from utils.sorce import Sorce
 from features.chat.unread_message import UnreadMessage
-from features.extras.open import open
-from features.chat.chat import Chat
-from features.chat import *
-from features.chat.group import Group
 from time import sleep
 from selenium.common.exceptions import StaleElementReferenceException
+from utils.threads import *
+from utils.exceptions import *
+from utils.sorce import Sorce
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.common.exceptions import TimeoutException, StaleElementReferenceException
+from utils.handler import *
+from selenium.webdriver.support import expected_conditions as EC
 
 class Demon:
-    '''
-    Introducing the enchanting `Demon Connect` API! 🪄✨
+    def __init__(self, browser, browser_path, driver_path):
+        self.browser = browser
+        self.browser_path = browser_path
+        self.driver_path = driver_path
+        self.driver = self.load_driver()
 
-    With the `Demon` class at your side, your WhatsApp Web experience will be like embarking on a magical quest! 📱💬
-
-    Summon the `Demon` to open the gateway to the digital realm and explore its wondrous features. Send messages 📜, share images 📷, cast videos 🎥, and even manage group chats with ease! Gather your allies with a single tag 🏷️, uncover the history of your chats 📚, and share knowledge with sacred documents 📂. On your journey, discover hidden treasures by fetching unread chats 🔍 and gracefully exit the realm when your adventure is complete 🚪.
-
-    With `Demon Connect`, WhatsApp Web becomes an epic adventure filled with emojis and digital magic! 🌟🚀🧙‍♂️
-    
-    '''
-
-
-
-
-    
     _callbacks: Dict[str, Callable] = {
         "on_ready": None,
         "on_message": None
@@ -53,11 +49,7 @@ class Demon:
         "on_message": None
     }
 
-    def __init__(self, browser, browser_path, driver_path):
-        self.browser = browser
-        self.browser_path = browser_path
-        self.driver_path = driver_path
-        self.driver = self.load_driver()
+   
     
     def _is_loaded(self) -> bool:
         """Check if the page is loaded."""
@@ -87,7 +79,54 @@ class Demon:
             raise InvalidEventException(f"Invalid event: {func.__name__}")
 
         self._callbacks[func.__name__] = func
+    def open(self, chat: str) -> (Chat | Group | None):
+        """Opens a chat with the specified name or phone number
 
+        #### Arguments
+            * chat (str): The name or phone number of the chat to open
+
+        #### Returns
+            * (Chat | Group | None): The chat with the specified name or phone number. None if the chat wasn't found
+        """
+
+        if not self._is_loaded():
+            raise Exception("Something went wrong while loading WhatsApp web.")
+
+        if phone_number_regex.match(chat):
+            # Remove all the non-numeric characters
+            phone = "".join(filter(str.isdigit, chat))
+
+            self.driver.get(f"https://web.whatsapp.com/send?phone={phone}")
+            WebDriverWait(self.driver, 5).until(lambda driver: self._is_loaded())
+        else:
+            # Close the menu and the current chat
+            ActionChains(self.driver).send_keys(Keys.ESCAPE).perform()
+            WebDriverWait(self.driver, 5).until(lambda driver: not self._is_animating())
+            ActionChains(self.driver).send_keys(Keys.ESCAPE).perform()
+
+            # Search for the chat
+            search = self._search_chat(chat)
+            search.send_keys(Keys.ENTER)
+
+            self._clear_search_bar()
+
+        # Open the chat info
+        try:
+            WebDriverWait(self.driver, 5).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, Sorce.CONVERSATION_HEADER))
+            )
+            self.driver.find_element(By.CSS_SELECTOR, Sorce.CONVERSATION_HEADER).click()
+        except TimeoutException:
+            return None
+
+        WebDriverWait(self.driver, 5).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, Sorce.INFO_DRAWER_BODY)))
+
+        if element_exists(self.driver, By.CSS_SELECTOR, Sorce.GROUP_INFO_HEADER):
+            return Group(self)
+
+        return Chat(self)
+    
     @property
     def unread_messages(self) -> List[UnreadMessage]:
         """Returns the list of unread messages in the conversations page.
@@ -172,9 +211,6 @@ class Demon:
 
             last_check = unread
             sleep(1) # Wait 1 second before checking again
-
-    def open(self, chat: str) -> (Chat | Group | None):
-        open(self, chat)
 
     def logout(self):
         logout(self.driver)

@@ -21,11 +21,11 @@ from dataclasses import dataclass, field
 from typing import List
 from time import sleep
 
-from features import chat
-from api.whatsapp_api import Demon
+from features.chat.conversation import Conversation
 from utils.exceptions import *
 from utils.handler import *
 from utils.sorce import Sorce
+from api.whatsapp_api import Demon
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -33,7 +33,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 
 @dataclass(init=False)
-class Group(chat.Conversation):
+class Group(Conversation):
     _whatsapp: Demon = field(repr=False)
     
     name: str
