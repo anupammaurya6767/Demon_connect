@@ -182,7 +182,9 @@ class Demon:
         send_message(self.driver,contact_name, message)
 
     def delete_message(self, group_name, message):
-        delete_message(self.driver, group_name, message)
+        #delete_message(self.driver, group_name, message)
+        raise NotImplemented
+        
     
     def tag_all(self, group_name):
         tag_all(self.driver, group_name)
