@@ -50,8 +50,8 @@ class Demon:
         "on_message": None
     }
 
-   
-    
+    _visible: bool
+     
     def _is_loaded(self) -> bool:
         """Check if the page is loaded."""
 
@@ -201,6 +201,14 @@ class Demon:
     
     def fetch_all_unread_chats(self, limit=True, top=50):
         fetch_all_unread_chats(self.driver, limit, top)
+
+    def _on_ready(self) -> None:
+        """Calls the on_ready callback when the page is loaded."""
+
+        if not self._callbacks["on_ready"]:
+            return
+
+        self._callbacks["on_ready"]()
 
     def _on_message(self) -> None:
         """Checks for new messages and calls the on_message callback"""
