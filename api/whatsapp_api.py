@@ -113,12 +113,6 @@ class Demon:
     def send_message(self,contact_name, message):
         send_message(self.driver,contact_name, message)
 
-    def send_image(self,contact_name, image_path):
-        send_image(self.driver,contact_name, image_path)
-
-    def send_video(self,contact_name, video_path):
-        send_video(self.driver,contact_name, video_path)
-
     def delete_message(self, group_name, message):
         delete_message(self.driver, group_name, message)
     
