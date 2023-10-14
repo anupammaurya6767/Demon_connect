@@ -20,7 +20,7 @@ from utils.sorce import Sorce
 
 @dataclass(init=False)
 class Conversation:
-    """Utility class for conversations and groups. Should not be initialized directly, use `whatsappy.Whatsapp.open` instead."""
+    """Utility class for conversations and groups. Should not be initialized directly, use `whatsapp_demon.open` instead."""
     
     _whatsapp: Demon = field(repr=False)
     name: str
