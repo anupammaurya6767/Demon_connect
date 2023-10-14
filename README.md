@@ -65,6 +65,10 @@ Unleash the demon within as you explore the capabilities of this WhatsApp API. T
     @whatsapp_demon.event
     def on_message(chat):
         print(f"New message from {chat.name}: {chat.message}")
+
+    @whatsapp.event
+    def on_ready():
+    print("Demon is ready!")
   
     chat = whatsapp_demon.open("Anupam Maurya")
     chat.send("HI")
