@@ -16,15 +16,18 @@ from utils.handler import *
 
 @dataclass(init=False)
 class Chat(chat.Conversation):
-    """A chat in WhatsApp. Should not be initialized directly, use `whatsapp_demon.open` instead.
+   """
+🎉 A Magical Chat in WhatsApp 🪄
 
-    #### Properties
-        * name (str): The name of the chat.
-        * number (str): The number of the chat.
-        * about (str): The about of the chat.
-        * profile_picture (JpegImageFile): The profile picture of the chat.
-        * starred_messages (List[str]): The starred messages of the chat.
-    """
+This enchanting chat in WhatsApp holds many secrets and wonders! ✨ Do not attempt to initialize it directly, instead, invoke the 'whatsapp_demon.open' incantation. 🧙‍♂️
+
+### 🧚‍♀️ Properties
+- **name** (str): The mystical name of the chat. 📜
+- **number** (str): The secret number of the chat. 🕵️‍♀️
+- **about** (str): The enchanting about section of the chat. 📖
+- **profile_picture** (JpegImageFile): The arcane profile picture of the chat, a portal to another world. 🖼️
+- **starred_messages** (List[str]): The constellation of starred messages in the chat, like shining stars in the night sky. 🌟
+"""
 
     _whatsapp: Demon = field(repr=False)
 
