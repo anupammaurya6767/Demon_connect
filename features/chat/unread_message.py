@@ -16,7 +16,7 @@ from utils import *
 
 @dataclass(init=False)
 class UnreadMessage:
-    """An unread chat. Should not be initialized directly, use `whatsappy.Whatsapp.unread_messages` instead.
+    """An unread chat. Should not be initialized directly, use `whatsapp_demon.unread_messages` instead.
 
     #### Properties
         * name (str): The name of the unread chat.
