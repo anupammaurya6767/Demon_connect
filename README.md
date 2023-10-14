@@ -79,6 +79,17 @@ Unleash the demon within as you explore the capabilities of this WhatsApp API. T
 
 Contributions are welcome! Feel free to open issues and pull requests to enhance the API's power.
 
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ## License 📜
 
 This project is licensed under the **WhatsApp API License**. See the [LICENSE](LICENSE) file for details.
