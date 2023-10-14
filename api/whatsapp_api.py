@@ -21,7 +21,6 @@ from utils.threads import MyThread
 from utils.exceptions import InvalidEventException
 from utils.handler import *
 from utils.sorce import Sorce
-from features.chat.unread_message import UnreadMessage
 from time import sleep
 from selenium.common.exceptions import StaleElementReferenceException
 from utils.threads import *
