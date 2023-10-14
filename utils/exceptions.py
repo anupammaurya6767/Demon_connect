@@ -25,3 +25,6 @@ class UserAlreadyAdminException(Exception):
 class UserNotAdminException(Exception):
     """Exception raised when a user tries to demote a user from admin, but the user is not an admin."""
     ...
+
+class NotImplemented(Exception):
+    """Exception raised when a function is not implemented"""
