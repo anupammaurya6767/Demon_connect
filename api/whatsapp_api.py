@@ -36,7 +36,12 @@ from selenium.webdriver.common.by import By
 from features.chat import *
 
 class Demon:
-    def __init__(self, browser, browser_path, driver_path):
+    _timeout: int
+    _visible: bool
+
+    def __init__(self, browser, browser_path, driver_path,timeout: int = 60, visible: bool = True):
+        self._timeout = timeout
+        self._visible = visible
         self.browser = browser
         self.browser_path = browser_path
         self.driver_path = driver_path
@@ -50,7 +55,6 @@ class Demon:
         "on_message": None
     }
 
-    _visible: bool
      
     def _is_loaded(self) -> bool:
         """Check if the page is loaded."""
