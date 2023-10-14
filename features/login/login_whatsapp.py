@@ -8,6 +8,7 @@ from utils.handler import *
 # import qrcode_terminal
 from qrcode import QRCode
 from time import sleep
+import os
 
 def login_whatsapp(self):
     self.driver.get(WHATSAPP_WEB_URL)
