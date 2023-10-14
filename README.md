@@ -66,7 +66,7 @@ Unleash the demon within as you explore the capabilities of this WhatsApp API. T
     def on_message(chat):
         print(f"New message from {chat.name}: {chat.message}")
 
-    @whatsapp.event
+    @whatsapp_demon.event
     def on_ready():
     print("Demon is ready!")
   
