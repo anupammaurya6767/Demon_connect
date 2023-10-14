@@ -1,8 +1,6 @@
 # 🌟 Demon Connect - WhatsApp API 🌟
 
-<p align="center">
-  <img src="https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/demon_connect.png" alt="Demon Connect Logo">
-</p>
+<img align='right' src="https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/main.png" width="230">
 
 <p align="center">
   <a href="#Overview">Overview</a> •
@@ -56,12 +54,21 @@ Unleash the demon within as you explore the capabilities of this WhatsApp API. T
 
 2. Include Demon Connect in your Python project:
    ```python
-   from api.whatsapp_api import Demon
+    from api.whatsapp_api import Demon
 
-   # Initialize the API
-   whatsapp_api = Demon()
+    # Initialize the API
+    whatsapp_api = Demon()
 
-   # Use the API to send messages and interact with WhatsApp
+    # Log in to WhatsApp Web
+    whatsapp_demon.login()
+  
+    @whatsapp_demon.event
+    def on_message(chat):
+        print(f"New message from {chat.name}: {chat.message}")
+  
+    chat = whatsapp_demon.open("Anupam Maurya")
+    chat.send("HI")
+
    ```
 
 ## Contributing 🌟

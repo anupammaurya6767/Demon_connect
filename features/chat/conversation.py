@@ -20,7 +20,16 @@ from utils.sorce import Sorce
 
 @dataclass(init=False)
 class Conversation:
-    """Utility class for conversations and groups. Should not be initialized directly, use `whatsappy.Whatsapp.open` instead."""
+    """
+🚀 Conversations & Groups Utility Class 🤖
+
+Behold, the magical utility class for managing conversations and groups in WhatsApp! ✨🪄 Do not attempt direct initialization; invoke the 'whatsapp_demon.open' spell instead. 🧙‍♂️
+
+This class serves as your trusty companion on your quest to conquer WhatsApp's digital realms. With its powers, you can wield the mightiest conversations and groups with ease!
+
+May the messages be ever in your favor! 📱💬
+"""
+
     
     _whatsapp: Demon = field(repr=False)
     name: str

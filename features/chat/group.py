@@ -20,15 +20,21 @@ from selenium.common.exceptions import NoSuchElementException
 
 @dataclass(init=False)
 class Group(chat.Conversation):
-    """A group in WhatsApp. Should not be initialized directly, use `whatsappy.Whatsapp.open` instead.
+   """
+🌟 A Majestic WhatsApp Group 🏰
 
-    #### Properties
-        * subject (str): The subject of the group.
-        * description (str): The description of the group.
-        * profile_picture (JpegImageFile): The profile picture of the group.
-        * participants (int): The number of participants of the group.
-        * starred_messages (List[str]): The starred messages of the group.
-    """
+This, dear traveler, is not just any WhatsApp group; it's a realm of magic, conversation, and camaraderie! 🪄⚔️✨
+
+Beware, for you must not summon it directly. Instead, wield the 'whatsapp_demon.open' spell. 🧙‍♂️🌌
+
+### 🌈 Properties
+- **subject** (str): The enchanting subject of the group, a beacon in the digital wilderness. 🌈
+- **description** (str): The mystical description of the group, a tale waiting to be told. 📜
+- **profile_picture** (JpegImageFile): The sacred profile picture of the group, a portal to another world. 🖼️
+- **participants** (int): The noble count of participants in the group, each a hero in their own right. ⚔️👥
+- **starred_messages** (List[str]): The constellation of starred messages, gems in the treasure trove of chats. 💎🌟
+"""
+
     
     _whatsapp: Demon = field(repr=False)
     

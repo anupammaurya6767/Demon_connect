@@ -17,17 +17,25 @@ from utils.sorce import Sorce
 
 @dataclass(init=False)
 class Message:
-    """Utility class for messages. Should not be initialized directly, use `whatsappy.Whatsapp.open` instead.
-
-    #### Properties
-        * author (str): The author of the message.
-        * content (str): The content of the message.
-        * timestamp (datetime): The timestamp of the message.
-        * chat (Chat | Group): The chat the message was sent in.
-        * attatchments (List[Any]): The attatchments of the message.
-        * is_forwarded (bool): Whether the message is forwarded.
-        * is_reply (bool): Whether the message is a reply.
     """
+💌 Magical Message Utility Class 🚀
+
+This, my fellow wanderer, is the secret scroll for managing messages in the realm of WhatsApp! 🧙‍♂️🪄 Do not attempt to conjure it directly; use the 'whatsapp_demon.open' incantation. 📱💬
+
+This enchanting class is your key to deciphering the language of messages, from authors and timestamps to attachments and the mysteries of forwarding and replies.
+
+May your messages be swift and your adventures legendary! 🌟📜
+
+### 📜 Properties
+- **author** (str): The scribe of the message, weaving tales in the digital tapestry. 🧙‍♀️📜
+- **content** (str): The mystical content of the message, words that travel through the aether. 🪄✨
+- **timestamp** (datetime): The timestamp, a glimpse into the hourglass of time. 🕰️🌌
+- **chat** (Chat | Group): The sacred chat where the message found its voice, a realm of connections. 🏰👥
+- **attachments** (List[Any]): The attachments, treasures bound to the message, the stuff of legends. 📦🌟
+- **is_forwarded** (bool): The mark of messages that have journeyed through the winds of sharing. 💌🌬️
+- **is_reply** (bool): The sign of messages in conversation, echoes in the grand narrative of chats. 💬🌊
+"""
+
 
     _element: WebElement = field(repr=False)
     _whatsapp: Demon = field(repr=False)

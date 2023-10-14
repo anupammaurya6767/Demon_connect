@@ -16,13 +16,19 @@ from utils import *
 
 @dataclass(init=False)
 class UnreadMessage:
-    """An unread chat. Should not be initialized directly, use `whatsappy.Whatsapp.unread_messages` instead.
+  """
+🔔 Enchanted Unread Chat 📩
 
-    #### Properties
-        * name (str): The name of the unread chat.
-        * count (int): The count of the unread chat.
-        * message (str): The last message of the unread chat.
-    """
+Behold, a chat cloaked in the mystique of unread messages, a realm of secrets and surprises in WhatsApp! 🪄📜 Do not seek to awaken it directly; invoke the 'whatsapp_demon.unread_messages' spell instead. 🧙‍♂️🔮
+
+This class unveils the tales of unread chats, their names, the count of their unread scrolls, and the echoes of their last messages. A world of digital mysteries awaits! 🌟📩
+
+### 🌠 Properties
+- **name** (str): The magical name of the unread chat, a title that hints at the untold. 🌌📜
+- **count** (int): The count of unread messages, a measure of the secrets hidden within. 🔢🔐
+- **message** (str): The last message, a whisper of the chat's lingering voice. 💬🌟
+"""
+
 
     _whatsapp: Demon = field(repr=False)
     _element: WebElement = field(repr=False)
