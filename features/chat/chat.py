@@ -1,3 +1,15 @@
+"""
+🎉 A Magical Chat in WhatsApp 🪄
+
+This enchanting chat in WhatsApp holds many secrets and wonders! ✨ Do not attempt to initialize it directly, instead, invoke the 'whatsapp_demon.open' incantation. 🧙‍♂️
+
+### 🧚‍♀️ Properties
+- **name** (str): The mystical name of the chat. 📜
+- **number** (str): The secret number of the chat. 🕵️‍♀️
+- **about** (str): The enchanting about section of the chat. 📖
+- **profile_picture** (JpegImageFile): The arcane profile picture of the chat, a portal to another world. 🖼️
+- **starred_messages** (List[str]): The constellation of starred messages in the chat, like shining stars in the night sky. 🌟
+"""
 from __future__ import annotations
 
 import requests
@@ -16,19 +28,6 @@ from utils.handler import *
 
 @dataclass(init=False)
 class Chat(chat.Conversation):
-   """
-🎉 A Magical Chat in WhatsApp 🪄
-
-This enchanting chat in WhatsApp holds many secrets and wonders! ✨ Do not attempt to initialize it directly, instead, invoke the 'whatsapp_demon.open' incantation. 🧙‍♂️
-
-### 🧚‍♀️ Properties
-- **name** (str): The mystical name of the chat. 📜
-- **number** (str): The secret number of the chat. 🕵️‍♀️
-- **about** (str): The enchanting about section of the chat. 📖
-- **profile_picture** (JpegImageFile): The arcane profile picture of the chat, a portal to another world. 🖼️
-- **starred_messages** (List[str]): The constellation of starred messages in the chat, like shining stars in the night sky. 🌟
-"""
-
     _whatsapp: Demon = field(repr=False)
 
     name: str
@@ -61,68 +60,69 @@ This enchanting chat in WhatsApp holds many secrets and wonders! ✨ Do not atte
 
         self._start_threads()
 
-    @property
-    def is_blocked(self) -> bool:
-        """Returns whether the chat is blocked or not."""
+        @property
+        def is_blocked(self) -> bool:
+            """Returns whether the chat is blocked or not."""
 
-        if self._whatsapp.current_chat != self.name:
-            raise NotSelectedException(f"The chat \"{self.name}\" is not selected.")
+            if self._whatsapp.current_chat != self.name:
+                raise NotSelectedException(f"The chat \"{self.name}\" is not selected.")
 
-        return element_exists(self._whatsapp.driver, By.CSS_SELECTOR, '#app > div > div > div:nth-child(6) div[title="Unblock "]')
-            
-    def block(self) -> None:
-        """Blocks the chat."""
+            return element_exists(self._whatsapp.driver, By.CSS_SELECTOR, '#app > div > div > div:nth-child(6) div[title="Unblock "]')
+                
+        def block(self) -> None:
+            """Blocks the chat."""
 
-        if self._whatsapp.current_chat != self.name:
-            raise NotSelectedException(f"The chat \"{self.name}\" is not selected.")
+            if self._whatsapp.current_chat != self.name:
+                raise NotSelectedException(f"The chat \"{self.name}\" is not selected.")
 
-        if self.is_blocked:
-            return
+            if self.is_blocked:
+                return
 
-        driver = self._whatsapp.driver
-        driver.find_element(By.CSS_SELECTOR, '#app > div > div > div:nth-child(6) div[title="Block "]').click()
+            driver = self._whatsapp.driver
+            driver.find_element(By.CSS_SELECTOR, '#app > div > div > div:nth-child(6) div[title="Block "]').click()
 
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-animate-modal-popup="true"]')))
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-animate-modal-popup="true"]')))
 
-        driver.find_element(By.CSS_SELECTOR, 'div[data-animate-modal-popup="true"] button:last-child').click()
+            driver.find_element(By.CSS_SELECTOR, 'div[data-animate-modal-popup="true"] button:last-child').click()
 
-        WebDriverWait(driver, 10).until(
-            EC.invisibility_of_element_located((By.CSS_SELECTOR, 'div[data-animate-modal-popup="true"]')))
+            WebDriverWait(driver, 10).until(
+                EC.invisibility_of_element_located((By.CSS_SELECTOR, 'div[data-animate-modal-popup="true"]')))
 
-    def unblock(self) -> None:
-        """Unblocks the chat."""
+        def unblock(self) -> None:
+            """Unblocks the chat."""
 
-        if self._whatsapp.current_chat != self.name:
-            raise NotSelectedException(f"The chat \"{self.name}\" is not selected.")
+            if self._whatsapp.current_chat != self.name:
+                raise NotSelectedException(f"The chat \"{self.name}\" is not selected.")
 
-        if not self.is_blocked:
-            return
+            if not self.is_blocked:
+                return
 
-        driver = self._whatsapp.driver
-        driver.find_element(By.CSS_SELECTOR, '#app > div > div > div:nth-child(6) div[title="Unblock "]').click()
+            driver = self._whatsapp.driver
+            driver.find_element(By.CSS_SELECTOR, '#app > div > div > div:nth-child(6) div[title="Unblock "]').click()
 
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-animate-modal-popup="true"]')))
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-animate-modal-popup="true"]')))
 
-        driver.find_element(By.CSS_SELECTOR,'div[data-animate-modal-popup="true"] button:last-child').click()
+            driver.find_element(By.CSS_SELECTOR,'div[data-animate-modal-popup="true"] button:last-child').click()
 
-        WebDriverWait(driver, 10).until(
-            EC.invisibility_of_element_located((By.CSS_SELECTOR, 'div[data-animate-modal-popup="true"]')))
+            WebDriverWait(driver, 10).until(
+                EC.invisibility_of_element_located((By.CSS_SELECTOR, 'div[data-animate-modal-popup="true"]')))
 
-    def delete(self) -> None:
-        """Deletes the chat."""
+        def delete(self) -> None:
+            """Deletes the chat."""
 
-        if self._whatsapp.current_chat != self.name:
-            raise NotSelectedException(f"The chat \"{self.name}\" is not selected.")
+            if self._whatsapp.current_chat != self.name:
+                raise NotSelectedException(f"The chat \"{self.name}\" is not selected.")
 
-        driver = self._whatsapp.driver
-        driver.find_element(By.CSS_SELECTOR, '#app > div > div > div:nth-child(6) div[title="Delete chat"]').click()
+            driver = self._whatsapp.driver
+            driver.find_element(By.CSS_SELECTOR, '#app > div > div > div:nth-child(6) div[title="Delete chat"]').click()
 
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-animate-modal-popup="true"] button:last-child')))
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, 'div[data-animate-modal-popup="true"] button:last-child')))
 
-        driver.find_element(By.CSS_SELECTOR,'div[data-animate-modal-popup="true"] button:last-child').click()
+            driver.find_element(By.CSS_SELECTOR,'div[data-animate-modal-popup="true"] button:last-child').click()
 
-        WebDriverWait(driver, 10).until(
-            EC.invisibility_of_element_located((By.CSS_SELECTOR, 'div[data-animate-modal-popup="true"]')))
+            WebDriverWait(driver, 10).until(
+                EC.invisibility_of_element_located((By.CSS_SELECTOR, 'div[data-animate-modal-popup="true"]')))
+

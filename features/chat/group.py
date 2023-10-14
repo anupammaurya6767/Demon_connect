@@ -1,3 +1,17 @@
+"""
+🌟 A Majestic WhatsApp Group 🏰
+
+This, dear traveler, is not just any WhatsApp group; it's a realm of magic, conversation, and camaraderie! 🪄⚔️✨
+
+Beware, for you must not summon it directly. Instead, wield the 'whatsapp_demon.open' spell. 🧙‍♂️🌌
+
+### 🌈 Properties
+- **subject** (str): The enchanting subject of the group, a beacon in the digital wilderness. 🌈
+- **description** (str): The mystical description of the group, a tale waiting to be told. 📜
+- **profile_picture** (JpegImageFile): The sacred profile picture of the group, a portal to another world. 🖼️
+- **participants** (int): The noble count of participants in the group, each a hero in their own right. ⚔️👥
+- **starred_messages** (List[str]): The constellation of starred messages, gems in the treasure trove of chats. 💎🌟
+"""
 from __future__ import annotations
 
 import requests
@@ -20,22 +34,6 @@ from selenium.common.exceptions import NoSuchElementException
 
 @dataclass(init=False)
 class Group(chat.Conversation):
-   """
-🌟 A Majestic WhatsApp Group 🏰
-
-This, dear traveler, is not just any WhatsApp group; it's a realm of magic, conversation, and camaraderie! 🪄⚔️✨
-
-Beware, for you must not summon it directly. Instead, wield the 'whatsapp_demon.open' spell. 🧙‍♂️🌌
-
-### 🌈 Properties
-- **subject** (str): The enchanting subject of the group, a beacon in the digital wilderness. 🌈
-- **description** (str): The mystical description of the group, a tale waiting to be told. 📜
-- **profile_picture** (JpegImageFile): The sacred profile picture of the group, a portal to another world. 🖼️
-- **participants** (int): The noble count of participants in the group, each a hero in their own right. ⚔️👥
-- **starred_messages** (List[str]): The constellation of starred messages, gems in the treasure trove of chats. 💎🌟
-"""
-
-    
     _whatsapp: Demon = field(repr=False)
     
     name: str
