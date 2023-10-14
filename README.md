@@ -89,6 +89,9 @@ Contributions are welcome! Feel free to open issues and pull requests to enhance
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+<a href="https://github.com/anupammaurya6767/Demon_connect/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=anupammaurya6767/Demon_connect" />
+</a>
 
 ## License 📜
 
