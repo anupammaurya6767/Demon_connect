@@ -30,6 +30,21 @@ from time import sleep
 from selenium.common.exceptions import StaleElementReferenceException
 
 class Demon:
+    '''
+    Introducing the enchanting `Demon Connect` API! 🪄✨
+
+    With the `Demon` class at your side, your WhatsApp Web experience will be like embarking on a magical quest! 📱💬
+
+    Summon the `Demon` to open the gateway to the digital realm and explore its wondrous features. Send messages 📜, share images 📷, cast videos 🎥, and even manage group chats with ease! Gather your allies with a single tag 🏷️, uncover the history of your chats 📚, and share knowledge with sacred documents 📂. On your journey, discover hidden treasures by fetching unread chats 🔍 and gracefully exit the realm when your adventure is complete 🚪.
+
+    With `Demon Connect`, WhatsApp Web becomes an epic adventure filled with emojis and digital magic! 🌟🚀🧙‍♂️
+    
+    '''
+
+
+
+
+    
     _callbacks: Dict[str, Callable] = {
         "on_ready": None,
         "on_message": None
