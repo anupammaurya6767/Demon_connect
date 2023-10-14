@@ -20,7 +20,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.common.exceptions import NoSuchElementException
 
-from features import chat
+from features.chat import *
 from api.whatsapp_api import Demon
 from utils.exceptions import *
 from utils.handler import *

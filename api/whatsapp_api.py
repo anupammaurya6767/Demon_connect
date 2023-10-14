@@ -33,6 +33,7 @@ from selenium.common.exceptions import TimeoutException, StaleElementReferenceEx
 from utils.handler import *
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from features.chat import *
 
 class Demon:
     def __init__(self, browser, browser_path, driver_path):

@@ -20,7 +20,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
-from features import chat
+from features.chat import *
 from utils.exceptions import *
 from utils.handler import *
 from api.whatsapp_api import Demon

@@ -12,7 +12,7 @@ from selenium.common.exceptions import TimeoutException, StaleElementReferenceEx
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.remote.webelement import WebElement
 
-from features import chat
+from features.chat import *
 from api.whatsapp_api import Demon
 from utils.exceptions import *
 from utils.handler import *
