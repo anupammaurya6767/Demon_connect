@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "Demon_connect"
+version = "0.1.0"
+description = "Welcome to Demon Connect - WhatsApp API, your powerful tool for unleashing the potential of WhatsApp in your applications. This API allows you to integrate WhatsApp messaging into your projects with ease."
+authors = ["anupam maurya <anupammaurya981@gmail.com>","tarun jain <tarunjainjain11@gmail.com","Nikhil Gupta <nikhil20047@gmail.com>","Aditya Balasubramanian <adityabala2005@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+demon-connect = "1.0.0"
+
+[tool.poetry.dev-dependencies]
+# Add your development dependencies here
+qrcode="^7.3"
+pillow ="^10.0.1"
+selenium="^4.13.0"
+webdriver-manager= "^3.4.2"
+qrcode_terminal="^0.8"
+typing-extensions="^3.10.0.2"
+pathlib2="^2.3.6"
+imageio ="^2.9.0"
+
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
