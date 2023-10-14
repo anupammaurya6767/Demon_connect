@@ -17,7 +17,7 @@ from utils.sorce import Sorce
 
 @dataclass(init=False)
 class Message:
-    """Utility class for messages. Should not be initialized directly, use `whatsappy.Whatsapp.open` instead.
+    """Utility class for messages. Should not be initialized directly, use `whatsapp_demon.open` instead.
 
     #### Properties
         * author (str): The author of the message.
