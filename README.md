@@ -10,6 +10,8 @@
   <a href="#Contributing">Contributing</a> •
   <a href="#License">License</a>
 </p>
+[![Chat](https://img.shields.io/badge/Chat-on%20Slack-blue?logo=slack)](https://slack.example.com)
+[![Alert](https://img.shields.io/badge/Alert-via%20Email-red?logo=mail.ru)](mailto:your.email@example.com)
 
 ## Overview 👹
 
