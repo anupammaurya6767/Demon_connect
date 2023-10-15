@@ -14,6 +14,10 @@ from api.whatsapp_api import Demon
 from utils.exceptions import *
 from utils.handler import *
 from utils.sorce import Sorce
+from utils import *
+from .. import chat
+from api import Demon
+
 
 @dataclass(init=False)
 class Message:

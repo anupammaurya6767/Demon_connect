@@ -1,3 +1,4 @@
+from __future__ import annotations
 """
 🔔 Enchanted Unread Chat 📩
 
@@ -11,7 +12,7 @@ This class unveils the tales of unread chats, their names, the count of their un
 - **message** (str): The last message, a whisper of the chat's lingering voice. 💬🌟
 """
 
-from __future__ import annotations
+
 
 from dataclasses import dataclass, field
 from typing import List, Literal
@@ -25,6 +26,9 @@ from api.whatsapp_api import Demon
 from utils.exceptions import *
 from utils.handler import *
 from utils.sorce import Sorce
+from api import Demon
+from .. import chat
+
 from utils import *
 
 @dataclass(init=False)

@@ -35,7 +35,9 @@ setup(
         "typing-extensions",
         "pathlib2",
         "moviepy",
-        "imageio[ffmpeg]"
+        "imageio[ffmpeg]",
+        "bs4",
+        "colorama"
     ],
     include_package_data=False,
     python_requires=">=3.10",

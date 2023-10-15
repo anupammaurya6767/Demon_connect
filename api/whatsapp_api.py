@@ -33,15 +33,19 @@ from selenium.common.exceptions import TimeoutException, StaleElementReferenceEx
 from utils.handler import *
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+# from features.chat.unread_message import UnreadMessage
+# from features.chat.chat import Chat
+# from features.chat.group import Group
+from utils import *
 from features.chat import *
 
 class Demon:
     _timeout: int
     _visible: bool
 
-    def __init__(self, browser, browser_path, driver_path,timeout: int = 60, visible: bool = True):
+    def __init__(self, browser, browser_path, driver_path,timeout: int = 60, visible: bool=True):
         self._timeout = timeout
-        self._visible = visible
+        self._visible =visible
         self.browser = browser
         self.browser_path = browser_path
         self.driver_path = driver_path
@@ -171,7 +175,7 @@ class Demon:
             if self.browser_path:
                 chrome_options.add_argument('user-data-dir=' +
                                             self.browser_path)
-            driver = webdriver.Chrome(executable_path=f"{self.driver_path}", options=chrome_options)
+            driver = webdriver.Chrome(options=chrome_options)
         elif self.browser == 'safari':
             pass
         elif self.browser == 'edge':
@@ -180,7 +184,7 @@ class Demon:
         return driver
     
     def login(self):
-        login_whatsapp(self.driver)
+        login_whatsapp(self)
 
     def send_message(self,contact_name, message):
         send_message(self.driver,contact_name, message)
@@ -188,7 +192,16 @@ class Demon:
     def delete_message(self, group_name, message):
         #delete_message(self.driver, group_name, message)
         raise NotImplemented
-        
+
+    def _add_thread(self, name: str, target: Callable, daemon: bool = True) -> None:
+        self._threads[name] = MyThread(target=target, daemon=daemon)
+
+    def _start_thread(self, name: str) -> None:
+        self._threads[name].start()
+
+    def _stop_thread(self, name: str) -> None:
+        self._threads[name].stop()
+        self._threads.pop(name)
     
     def tag_all(self, group_name):
         tag_all(self.driver, group_name)

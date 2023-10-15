@@ -1,3 +1,4 @@
+from __future__ import annotations
 """
 🌟 A Majestic WhatsApp Group 🏰
 
@@ -12,7 +13,8 @@ Beware, for you must not summon it directly. Instead, wield the 'whatsapp_demon.
 - **participants** (int): The noble count of participants in the group, each a hero in their own right. ⚔️👥
 - **starred_messages** (List[str]): The constellation of starred messages, gems in the treasure trove of chats. 💎🌟
 """
-from __future__ import annotations
+
+
 
 import requests
 from PIL import Image
@@ -25,12 +27,15 @@ from features.chat.conversation import Conversation
 from utils.exceptions import *
 from utils.handler import *
 from utils.sorce import Sorce
-from api.whatsapp_api import Demon
+# from api.whatsapp_api import Demon
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
+from .. import chat
+from api import Demon
+from utils import *
 
 @dataclass(init=False)
 class Group(Conversation):

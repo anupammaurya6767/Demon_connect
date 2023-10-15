@@ -1,3 +1,4 @@
+from __future__ import annotations
 """
 🎉 A Magical Chat in WhatsApp 🪄
 
@@ -10,7 +11,7 @@ This enchanting chat in WhatsApp holds many secrets and wonders! ✨ Do not atte
 - **profile_picture** (JpegImageFile): The arcane profile picture of the chat, a portal to another world. 🖼️
 - **starred_messages** (List[str]): The constellation of starred messages in the chat, like shining stars in the night sky. 🌟
 """
-from __future__ import annotations
+
 
 import requests
 from PIL import Image
@@ -20,10 +21,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
-from features.chat import *
+# from features.chat import *
 from utils.exceptions import *
 from utils.handler import *
-from api.whatsapp_api import Demon
+# from api.whatsapp_api import Demon
+from .. import chat
+from api import Demon
+from utils import *
+
 
 @dataclass(init=False)
 class Chat(chat.Conversation):

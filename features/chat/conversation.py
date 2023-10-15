@@ -12,11 +12,15 @@ from selenium.common.exceptions import TimeoutException, StaleElementReferenceEx
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.remote.webelement import WebElement
 
-from features.chat import *
-from api.whatsapp_api import Demon
+# from features.chat import *
+# from api.whatsapp_api import Demon
 from utils.exceptions import *
 from utils.handler import *
 from utils.sorce import Sorce
+from api import Demon
+
+from .message import Message
+from utils import *
 
 @dataclass(init=False)
 class Conversation:

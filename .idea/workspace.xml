@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aec4c12b-9f87-495d-a757-e14b30790668" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Demon_connect.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Demon_connect.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/whatsapp_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/whatsapp_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/login/login_whatsapp.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/login/login_whatsapp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/send/send_group_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/send/send_group_message.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/send/send_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/send/send_image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/send/send_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/features/send/send_message.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/constants.py" afterDir="false" />
-    </list>
+    <list default="true" id="aec4c12b-9f87-495d-a757-e14b30790668" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +16,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2WD82kUwUpvGIXQMvK6Ihrfm3br" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -37,7 +28,8 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/tarun/web_scraping/Demon_connect&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/tarun/Demon_connect&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>

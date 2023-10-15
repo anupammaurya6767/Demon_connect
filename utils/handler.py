@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.remote.webelement import WebElement
 from time import sleep
 from utils.exceptions import *
+from selenium.common.exceptions import NoSuchElementException
 def emoji_to_text(message: WebElement) -> str:
     # get the html of the message
     html = message.get_attribute("innerHTML")
