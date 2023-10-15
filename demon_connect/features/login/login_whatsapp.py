@@ -3,9 +3,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-from demon.utils.constants import WHATSAPP_WEB_URL
-from demon.utils.sorce import Sorce
-from demon.utils.handler import *
+from demon_connect.utils.constants import WHATSAPP_WEB_URL
+from demon_connect.utils.sorce import Sorce
+from demon_connect.utils.handler import *
 # import qrcode_terminal
 from qrcode import QRCode
 from time import sleep

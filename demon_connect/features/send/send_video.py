@@ -8,10 +8,10 @@ from selenium.common.exceptions import (
 )
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
-from demon.features.extras.convert_bytes_to import convert_bytes_to
-from demon.features.extras.send_attachment import send_attachment
-from demon.features.extras.add_caption import add_caption
-from demon.features.extras.find_attachment import find_attachment
+from demon_connect.features.extras.convert_bytes_to import convert_bytes_to
+from demon_connect.features.extras.send_attachment import send_attachment
+from demon_connect.features.extras.add_caption import add_caption
+from demon_connect.features.extras.find_attachment import find_attachment
 
 def send_video(driver,contact_name, video: Path, message: Optional[str] = None):
     """📹 Sends a video to a target user if it's less than 14MB.

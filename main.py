@@ -1,9 +1,9 @@
 # main.py
 from __future__ import annotations
-from demon.utils.constants import BROWSER
-from demon.utils.constants import USR_DIR
-from demon.utils.constants import CHROME_DRIVER_PATH
-from demon.whatsapp_api import Demon
+from demon_connect.utils.constants import BROWSER
+from demon_connect.utils.constants import USR_DIR
+from demon_connect.utils.constants import CHROME_DRIVER_PATH
+from demon_connect.whatsapp_api import Demon
 from colorama import Fore, Style
 # Define colors
 blue = Fore.BLUE

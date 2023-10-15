@@ -9,9 +9,9 @@ from selenium.common.exceptions import (
     NoSuchElementException,
 )
 
-from demon.features.extras.send_attachment import send_attachment
-from demon.features.extras.add_caption import add_caption
-from demon.features.extras.find_attachment import find_attachment
+from demon_connect.features.extras.send_attachment import send_attachment
+from demon_connect.features.extras.add_caption import add_caption
+from demon_connect.features.extras.find_attachment import find_attachment
 
 
 
