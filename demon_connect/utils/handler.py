@@ -2,7 +2,7 @@ from __future__ import annotations
 from bs4 import BeautifulSoup
 from selenium.webdriver.remote.webelement import WebElement
 from time import sleep
-from demon.utils.exceptions import *
+from utils.exceptions import *
 from selenium.common.exceptions import NoSuchElementException
 from selenium import webdriver
 from selenium.webdriver.remote.webdriver import WebDriver
