@@ -12,9 +12,8 @@
 </p>
 <br/>
 <p align="center">
-<img src="https://readthedocs.org/projects/Demon_connect/badge/?version=latest" alt="Docs" ><a href="https://demon-connect.readthedocs.io/" /></img>
+<img src="https://readthedocs.org/projects/demon_connect/badge/?version=latest" alt="Docs" ><a href="https://demon-connect.readthedocs.io/" /></img>
 <img src="https://img.shields.io/github/license/anupammaurya6767/Demon_connect" alt="License" ><a href="#" /></img>
-<img src="https://www.codefactor.io/repository/github/anupammaurya6767/Demon_connect/badge/master" alt="CodeFactor" ><a href="#" /></img>
 <img src="https://badges.aleen42.com/src/whatsapp.svg" alt="Whatsapp" >
 <a href="https://chat.whatsapp.com/FGV7ef4d9tNGtfN8HDvbim" />
 </img>
