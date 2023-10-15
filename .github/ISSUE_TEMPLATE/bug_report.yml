@@ -1,0 +1,39 @@
+name: 🐞 Bug Report 🕷️
+description: Create a report to help us improve
+
+body:
+  - type: textarea
+    attributes:
+      label: 📝 Describe the bug
+      placeholder: |
+        A clear and concise description of what the bug is. 🐛
+  - type: textarea
+    attributes:
+      label: 🔄 To Reproduce
+      placeholder: |
+        Steps to reproduce the behavior 🚶
+  - type: textarea
+    attributes:
+      label: 🚀 Expected behavior
+      placeholder: |
+        A clear and concise description of what you expected to happen. 🌠
+  - type: markdown
+    attributes:
+      value: |
+        ## 🌍 Environment (please complete the following information):
+  - type: input
+    attributes:
+      label:  🌟 pywa version
+      placeholder: e.g. 0.5.0
+  - type: input
+    attributes:
+      label:  🐍 Python version
+      placeholder: e.g. 3.10.0
+  - type: input
+    attributes:
+      label:  💻 Operating System
+      placeholder: e.g. Windows 11
+  - type: textarea
+    attributes:
+      label: 📚 Additional context
+      description: Add any other context about the problem here. 📖
