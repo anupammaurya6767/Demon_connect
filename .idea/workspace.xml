@@ -5,24 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aec4c12b-9f87-495d-a757-e14b30790668" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/chat/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat/chat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat/conversation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat/group.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/message/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/message/message.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/message/unread_message.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/whatsapp_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demon_connect.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sc1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sc2.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/whatsapp_api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/chat/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/chat/chat.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/chat/conversation.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/chat/group.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/chat/message.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/chat/unread_message.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sc3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/raman",
+    "last_opened_file_path": "/home/tarun/Demon_connect",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
