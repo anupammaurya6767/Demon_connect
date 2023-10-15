@@ -4,7 +4,7 @@ from __future__ import annotations
 
 This, dear traveler, is not just any WhatsApp group; it's a realm of magic, conversation, and camaraderie! 🪄⚔️✨
 
-Beware, for you must not summon it directly. Instead, wield the 'whatsapp_demon.open' spell. 🧙‍♂️🌌
+Beware, for you must not summon it directly. Instead, wield the 'whatsapp_whatsapp_api.demon.open' spell. 🧙‍♂️🌌
 
 ### 🌈 Properties
 - **subject** (str): The enchanting subject of the group, a beacon in the digital wilderness. 🌈
@@ -22,31 +22,24 @@ from PIL.JpegImagePlugin import JpegImageFile
 from dataclasses import dataclass, field
 from typing import List
 from time import sleep
-
-from features.chat.conversation import Conversation
-from utils.exceptions import *
-from utils.handler import *
-from utils.sorce import Sorce
-# from api.whatsapp_api import Demon
-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 from .. import chat
-from api import Demon
-from utils import *
+from .. import whatsapp_api
+from ..utils import *
 
 @dataclass(init=False)
-class Group(Conversation):
-    _whatsapp: Demon = field(repr=False)
+class Group(chat.Conversation):
+    _whatsapp: whatsapp_api.Demon = field(repr=False)
     
     name: str
     description: str
     participants: int
     profile_picture: JpegImageFile
     
-    def __init__(self, _whatsapp: Demon) -> None:
+    def __init__(self, _whatsapp: whatsapp_api.Demon) -> None:
         super().__init__(_whatsapp)
         
         driver = self._whatsapp.driver

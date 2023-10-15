@@ -8,15 +8,9 @@ from typing import Any, List, Literal
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
-
-from features.chat import *
-from api.whatsapp_api import Demon
-from utils.exceptions import *
-from utils.handler import *
-from utils.sorce import Sorce
-from utils import *
+from ..utils import *
 from .. import chat
-from api import Demon
+from .. import whatsapp_api
 
 
 @dataclass(init=False)
@@ -24,7 +18,7 @@ class Message:
     """
 💌 Magical Message Utility Class 🚀
 
-This, my fellow wanderer, is the secret scroll for managing messages in the realm of WhatsApp! 🧙‍♂️🪄 Do not attempt to conjure it directly; use the 'whatsapp_demon.open' incantation. 📱💬
+This, my fellow wanderer, is the secret scroll for managing messages in the realm of WhatsApp! 🧙‍♂️🪄 Do not attempt to conjure it directly; use the 'whatsapp_whatsapp_api.demon.open' incantation. 📱💬
 
 This enchanting class is your key to deciphering the language of messages, from authors and timestamps to attachments and the mysteries of forwarding and replies.
 
@@ -42,7 +36,7 @@ May your messages be swift and your adventures legendary! 🌟📜
 
 
     _element: WebElement = field(repr=False)
-    _whatsapp: Demon = field(repr=False)
+    _whatsapp: whatsapp_api.Demon = field(repr=False)
     
     chat: chat.Chat | chat.Group = None
     author: str = None
@@ -52,7 +46,7 @@ May your messages be swift and your adventures legendary! 🌟📜
     is_forwarded: bool = False
     is_reply: bool = False
     
-    def __init__(self, _whatsapp: Demon, _element: WebElement, chat: chat.Chat | chat.Group) -> None:
+    def __init__(self, _whatsapp: whatsapp_api.Demon, _element: WebElement, chat: chat.Chat | chat.Group) -> None:
         self._whatsapp = _whatsapp
         self._element = _element
         self.chat = chat

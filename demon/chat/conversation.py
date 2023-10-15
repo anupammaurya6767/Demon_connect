@@ -11,23 +11,16 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException, StaleElementReferenceException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.remote.webelement import WebElement
-
-# from features.chat import *
-# from api.whatsapp_api import Demon
-from utils.exceptions import *
-from utils.handler import *
-from utils.sorce import Sorce
-from api import Demon
-
-from .message import Message
-from utils import *
+from .. import whatsapp_api
+from ..message import Message
+from ..utils import *
 
 @dataclass(init=False)
 class Conversation:
     """
 🚀 Conversations & Groups Utility Class 🤖
 
-Behold, the magical utility class for managing conversations and groups in WhatsApp! ✨🪄 Do not attempt direct initialization; invoke the 'whatsapp_demon.open' spell instead. 🧙‍♂️
+Behold, the magical utility class for managing conversations and groups in WhatsApp! ✨🪄 Do not attempt direct initialization; invoke the 'whatsapp_whatsapp_api.demon.open' spell instead. 🧙‍♂️
 
 This class serves as your trusty companion on your quest to conquer WhatsApp's digital realms. With its powers, you can wield the mightiest conversations and groups with ease!
 
@@ -35,12 +28,12 @@ May the messages be ever in your favor! 📱💬
 """
 
     
-    _whatsapp: Demon = field(repr=False)
+    _whatsapp: whatsapp_api.Demon = field(repr=False)
     name: str
 
     _callbacks: Dict[str, Callable] = field(default_factory=dict, repr=False)
     
-    def __init__(self, _whatsapp: Demon) -> None:
+    def __init__(self, _whatsapp: whatsapp_api.Demon) -> None:
         self._whatsapp = _whatsapp
         self._callbacks = {
             "on_message": None

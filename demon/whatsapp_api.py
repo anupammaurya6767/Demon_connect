@@ -3,41 +3,30 @@ from __future__ import annotations
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-from features.login.login_whatsapp import login_whatsapp
-from features.send.send_message import send_message
-from features.send.send_image import send_image
-from features.send.send_video import send_video
-from features.delete.delete_message import delete_message
-from features.tagall.tagall import tag_all
-from features.extras.fetch_all_unread_chats import fetch_all_unread_chats
-from features.extras.get_list_of_messages import get_list_of_messages
-from features.send.send_file import send_file
-from features.logout.logout import logout
+from demon.features.login.login_whatsapp import login_whatsapp
+from demon.features.send.send_message import send_message
+from demon.features.send.send_image import send_image
+from demon.features.send.send_video import send_video
+from demon.features.tagall.tagall import tag_all
+from demon.features.extras.fetch_all_unread_chats import fetch_all_unread_chats
+from demon.features.extras.get_list_of_messages import get_list_of_messages
+from demon.features.send.send_file import send_file
+from demon.features.logout.logout import logout
 from typing import Optional
 from pathlib import Path
-from features.extras.get_list_of_messages import get_list_of_messages
+from demon.features.extras.get_list_of_messages import get_list_of_messages
 from typing import Dict, List, Callable
-from utils.threads import MyThread
-from utils.exceptions import InvalidEventException
-from utils.handler import *
-from utils.sorce import Sorce
 from time import sleep
 from selenium.common.exceptions import StaleElementReferenceException
-from utils.threads import *
-from utils.exceptions import *
-from utils.sorce import Sorce
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import TimeoutException, StaleElementReferenceException
-from utils.handler import *
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-# from features.chat.unread_message import UnreadMessage
-# from features.chat.chat import Chat
-# from features.chat.group import Group
-from utils import *
-from features.chat import *
+from .utils import *
+from .chat import *
+from .message import *
 
 class Demon:
     _timeout: int

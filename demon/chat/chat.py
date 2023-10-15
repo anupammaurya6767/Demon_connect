@@ -2,7 +2,7 @@ from __future__ import annotations
 """
 🎉 A Magical Chat in WhatsApp 🪄
 
-This enchanting chat in WhatsApp holds many secrets and wonders! ✨ Do not attempt to initialize it directly, instead, invoke the 'whatsapp_demon.open' incantation. 🧙‍♂️
+This enchanting chat in WhatsApp holds many secrets and wonders! ✨ Do not attempt to initialize it directly, instead, invoke the 'whatsapp_whatsapp_api.demon.open' incantation. 🧙‍♂️
 
 ### 🧚‍♀️ Properties
 - **name** (str): The mystical name of the chat. 📜
@@ -21,25 +21,21 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
-# from features.chat import *
-from utils.exceptions import *
-from utils.handler import *
-# from api.whatsapp_api import Demon
 from .. import chat
-from api import Demon
-from utils import *
+from .. import whatsapp_api
+from ..utils import *
 
 
 @dataclass(init=False)
 class Chat(chat.Conversation):
-    _whatsapp: Demon = field(repr=False)
+    _whatsapp: whatsapp_api.Demon = field(repr=False)
 
     name: str
     number: str
     about: str
     profile_picture: JpegImageFile
 
-    def __init__(self, _whatsapp: Demon) -> None:
+    def __init__(self, _whatsapp: whatsapp_api.Demon) -> None:
         super().__init__(_whatsapp)
 
         driver = self._whatsapp.driver

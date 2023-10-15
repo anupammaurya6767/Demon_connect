@@ -2,7 +2,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from features.extras.get_list_of_messages import get_list_of_messages
+from demon.features.extras.get_list_of_messages import get_list_of_messages
 def fetch_all_unread_chats(driver, limit=True, top=50):
     """📬 Fetches all unread chats.
 
