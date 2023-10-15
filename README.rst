@@ -1,27 +1,28 @@
-# 🌟 Demon Connect - WhatsApp API 🌟
+===============================
+🌟 Demon Connect - WhatsApp API 🌟
+===============================
 
-<img align='right' src="https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/main.png" width="230">
+.. image:: https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/main.png
+   :align: right
+   :width: 230px
 
-<p align="center">
-  <a href="#Overview">Overview</a> •
-  <a href="#Features">Features</a> •
-  <a href="#Usage">Usage</a> •
-  <a href="#Installation">Installation</a> •
-  <a href="#Contributing">Contributing</a> •
-  <a href="#License">License</a>
-</p>
+.. contents::
+   :local:
+   :backlinks: none
 
-## Overview 👹
+Overview 👹
+==========
 
 Welcome to **Demon Connect - WhatsApp API**, your powerful tool for unleashing the potential of WhatsApp in your applications. This API allows you to integrate WhatsApp messaging into your projects with ease.
 
-<p align="center">
-  <img src="https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/sc1.jpeg" alt="Demon Connect Screenshot">
-</p>
+.. image:: https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/sc1.jpeg
+   :alt: Demon Connect Screenshot
+   :align: center
 
 Unleash the demon within as you explore the capabilities of this WhatsApp API. Transform your digital experience with the magic of **Demon Connect**.
 
-## Features ✨
+Features ✨
+==========
 
 📲 **WhatsApp Integration**: Seamlessly integrate WhatsApp messaging into your applications.
 
@@ -31,7 +32,8 @@ Unleash the demon within as you explore the capabilities of this WhatsApp API. T
 
 🪄 **Customization**: Customize and extend the API to suit your project's needs.
 
-## Usage 📱
+Usage 📱
+========
 
 1. Install **Demon Connect - WhatsApp API** in your Python project.
 
@@ -41,64 +43,59 @@ Unleash the demon within as you explore the capabilities of this WhatsApp API. T
 
 4. Explore advanced features and customization options.
 
-<p align="center">
-  <img src="https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/sc2.jpeg" alt="Demon Connect Demo">
-</p>
+.. image:: https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/sc2.jpeg
+   :alt: Demon Connect Demo
+   :align: center
 
-## Installation 🧙‍♂️
+Installation 🧙‍♂️
+=================
 
 1. Install Demon Connect via pip:
-   ```bash
-   pip install demon-connect
-   ```
+
+   .. code-block:: bash
+
+      pip install demon-connect
 
 2. Include Demon Connect in your Python project:
-   ```python
-    from api.whatsapp_api import Demon
 
-    # Initialize the API
-    whatsapp_api = Demon()
+   .. code-block:: python
 
-    # Log in to WhatsApp Web
-    whatsapp_demon.login()
-  
-    @whatsapp_demon.event
-    def on_message(chat):
-        print(f"New message from {chat.name}: {chat.message}")
+      from api.whatsapp_api import Demon
 
-    @whatsapp_demon.event
-    def on_ready():
-    print("Demon is ready!")
-  
-    chat = whatsapp_demon.open("Anupam Maurya")
-    chat.send("HI")
+      # Initialize the API
+      whatsapp_api = Demon()
 
-   ```
+      # Log in to WhatsApp Web
+      whatsapp_demon.login()
+    
+      @whatsapp_demon.event
+      def on_message(chat):
+          print(f"New message from {chat.name}: {chat.message}")
 
-## Contributing 🌟
+      @whatsapp_demon.event
+      def on_ready():
+          print("Demon is ready!")
+    
+      chat = whatsapp_demon.open("Anupam Maurya")
+      chat.send("HI")
+
+Contributing 🌟
+===============
 
 Contributions are welcome! Feel free to open issues and pull requests to enhance the API's power.
 
-## Contributors
+Contributors
+------------
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
+See the list of contributors `here <https://github.com/anupammaurya6767/Demon_connect/graphs/contributors>`_.
 
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
+License 📜
+===========
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-<a href="https://github.com/anupammaurya6767/Demon_connect/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=anupammaurya6767/Demon_connect" />
-</a>
+This project is licensed under the **WhatsApp API License**. See the :doc:`LICENSE` file for details.
 
-## License 📜
-
-This project is licensed under the **WhatsApp API License**. See the [LICENSE](LICENSE) file for details.
-
-<p align="center">
-  <img src="https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/sc3.jpeg" alt="API License Seal">
-</p>
+.. image:: https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/sc3.jpeg
+   :alt: API License Seal
+   :align: center
 
 Unlock the potential of WhatsApp in your applications with **Demon Connect - WhatsApp API**!
