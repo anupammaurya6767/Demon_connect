@@ -5,6 +5,9 @@ from time import sleep
 from demon_connect.utils.exceptions import *
 from selenium.common.exceptions import NoSuchElementException
 from selenium import webdriver
+from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 def emoji_to_text(message: WebElement) -> str:
     # get the html of the message
     html = message.get_attribute("innerHTML")
