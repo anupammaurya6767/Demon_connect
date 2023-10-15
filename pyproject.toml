@@ -6,7 +6,7 @@ authors = ["anupam maurya <anupammaurya981@gmail.com>","tarun jain <tarunjainjai
 
 [tool.poetry.dependencies]
 python = "^3.10"
-demon-connect = "1.0.0"
+demon = "1.0.0"
 
 [tool.poetry.dev-dependencies]
 # Add your development dependencies here
