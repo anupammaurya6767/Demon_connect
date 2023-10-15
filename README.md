@@ -70,7 +70,27 @@ Unleash the demon within as you explore the capabilities of this WhatsApp API. T
 
     # Log in to WhatsApp Web
     whatsapp_demon.login()
-  
+
+    # Send a message
+     message = "heyy"
+     contact = "Grp"
+     whatsapp_demon.send_message(contact,message)
+     whatsapp_demon.delete_message(contact,message)
+
+    # Send an image (provide the path to the image file)
+     image_path = r"C:\Users\raman\Downloads\aatman.jpg"
+     contact = "Grp"
+     whatsapp_demon.send_image(contact,image_path)
+
+
+    # Send a video (provide the path to the video file)
+     video_path = "path/to/your/video.mp4"
+     whatsapp_demon.send_video(contact,video_path)
+
+    # tag all in group
+     group_name = "Grp"
+     whatsapp_demon.tag_all(group_name)
+
     @whatsapp_demon.event
     def on_message(chat):
         print(f"New message from {chat.name}: {chat.message}")
