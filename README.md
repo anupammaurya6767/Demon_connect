@@ -13,7 +13,7 @@
 <br/>
 <p align="center">
 <a href="https://pypi.org/project/demon-connect/">
-  <img src="https://img.shields.io/badge/demon-connect?logo=pypi&logoColor=blue&label=demon-connect&labelColor=red&color=black" alt="Demon" />
+  <img src="https://img.shields.io/badge/demon-connect?logo=pypi&logoColor=blue&label=demon-connect&labelColor=white&color=black" alt="Demon" />
 </a>
 <img src="https://readthedocs.org/projects/demon_connect/badge/?version=latest" alt="Docs" ><a href="https://demon-connect.readthedocs.io/" /></img>
 <img src="https://img.shields.io/github/license/anupammaurya6767/Demon_connect" alt="License" ><a href="#" /></img>
