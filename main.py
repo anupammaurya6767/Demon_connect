@@ -24,10 +24,10 @@ def main():
 
 
         # Create an instance of the Demon class
-        whatsapp_demon = Demon(BROWSER,USR_DIR,CHROME_DRIVER_PATH)
+        #whatsapp_demon = Demon(BROWSER,USR_DIR,CHROME_DRIVER_PATH)
 
         # Log in to WhatsApp Web
-        whatsapp_demon.login()
+        #whatsapp_demon.login()
 
         # @whatsapp_demon.event
         # def on_message(chat):
