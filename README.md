@@ -125,7 +125,7 @@ Contributions are welcome! Feel free to open issues and pull requests to enhance
 This project is licensed under the **WhatsApp API License**. See the [LICENSE](LICENSE) file for details.
 
 <p align="center">
-  <img src="https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/sc3.jpeg" alt="API License Seal">
+  <img src="https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/image.png" alt="API License Seal">
 </p>
 
 Unlock the potential of WhatsApp in your applications with **Demon Connect - WhatsApp API**!
