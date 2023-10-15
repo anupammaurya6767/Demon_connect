@@ -10,8 +10,16 @@
   <a href="#Contributing">Contributing</a> •
   <a href="#License">License</a>
 </p>
-[![Chat](https://img.shields.io/badge/Chat-on%20Slack-blue?logo=slack)](https://slack.example.com)
-[![Alert](https://img.shields.io/badge/Alert-via%20Email-red?logo=mail.ru)](mailto:your.email@example.com)
+<br/>
+<p align="center">
+<img src="https://readthedocs.org/projects/Demon_connect/badge/?version=latest" alt="Docs" />
+<img src="https://img.shields.io/github/license/anupammaurya6767/Demon_connect" alt="License" />
+<img src="https://www.codefactor.io/repository/github/anupammaurya6767/Demon_connect/badge/master" alt="CodeFactor" />
+<img src="https://badges.aleen42.com/src/whatsapp.svg" alt="Whatsapp" >
+<a href="https://chat.whatsapp.com/FGV7ef4d9tNGtfN8HDvbim" />
+</img>
+</p>
+
 
 ## Overview 👹
 
