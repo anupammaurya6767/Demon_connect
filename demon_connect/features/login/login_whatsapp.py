@@ -8,6 +8,7 @@ from demon_connect.utils.sorce import Sorce
 from demon_connect.utils.handler import *
 from typing import Self
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 from qrcode import QRCode
 from time import sleep
 import os
