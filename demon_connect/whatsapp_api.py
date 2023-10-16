@@ -29,16 +29,18 @@ from .chat import *
 from .message import *
 
 class Demon:
+    driver: webdriver.Chrome
+
     _timeout: int
     _visible: bool
+    _data_path: str
+    _chrome_options: Options
 
-    def __init__(self, browser, browser_path, driver_path,timeout: int = 60, visible: bool=True):
+    def __init__(self, timeout: int = 60, visible: bool = True, data_path: str = None, chrome_options: Options = None) -> None:
         self._timeout = timeout
-        self._visible =visible
-        self.browser = browser
-        self.browser_path = browser_path
-        self.driver_path = driver_path
-        self.driver = self.load_driver()
+        self._visible = visible
+        self._data_path = data_path
+        self._chrome_options = chrome_options
 
     _callbacks: Dict[str, Callable] = {
         "on_ready": None,
@@ -81,14 +83,16 @@ class Demon:
     def _search_chat(self, chat: str) -> WebElement:
         search = self.driver.find_element(By.CSS_SELECTOR, Sorce.SEARCH_BAR)
         send_keys_slowly(search, chat)
-        WebDriverWait(self.driver, 5).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, Sorce.SEARCH_BAR_CLEAR))
-        )
+        sleep(10)
+        # WebDriverWait(self.driver, 10).until(
+        #     EC.presence_of_element_located((By.CSS_SELECTOR, Sorce.SEARCH_BAR_CLEAR))
+        # )
 
         return search
 
     def _clear_search_bar(self) -> None:
         self.driver.find_element(By.CSS_SELECTOR, Sorce.SEARCH_BAR_CLEAR).click()
+        self.driver.find_element(By.CSS_SELECTOR, Sorce.BACK_CHAT).click()
 
     def open(self, chat: str) -> (Chat | Group | None):
         """Opens a chat with the specified name or phone number
@@ -148,30 +152,6 @@ class Demon:
 
         return [UnreadMessage(self, element) for element in self.driver.find_elements(By.CSS_SELECTOR, Sorce.UNREAD_CONVERSATIONS)]
 
-
-    def load_driver(self):
-        """
-        Load the Selenium driver depending on the browser
-        (Edge and Safari are not running yet)
-        """
-        driver = None
-        if self.browser == 'firefox':
-            firefox_profile = webdriver.FirefoxProfile(
-                self.browser_path)
-            driver = webdriver.Firefox(firefox_profile)
-        elif self.browser == 'Chrome':
-            chrome_options = webdriver.ChromeOptions()
-            if self.browser_path:
-                chrome_options.add_argument('user-data-dir=' +
-                                            self.browser_path)
-            driver = webdriver.Chrome(options=chrome_options)
-        elif self.browser == 'safari':
-            pass
-        elif self.browser == 'edge':
-            pass
-
-        return driver
-    
     def login(self):
         login_whatsapp(self)
 

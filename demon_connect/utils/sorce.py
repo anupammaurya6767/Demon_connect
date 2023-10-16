@@ -9,16 +9,17 @@ class Sorce:
     SEARCH_RESULT = '#pane-side div[role="grid"] > div > div:has(div[tabindex="-1"])'
     SEND_BUTTON = 'span[data-icon="send"]'
 
-    SEARCH_BAR = 'div.lexical-rich-text-input > div[role="textbox"]'
-    SEARCH_BAR_CLEAR = 'button[aria-label="Cancel search"]'
+    SEARCH_BAR = '#side > div._3gYev > div > div._1EUay > div._2vDPL > div > div.to2l77zo.gfz4du6o.ag5g9lrv.bze30y65.kao4egtt.qh0vvdkp'
+    SEARCH_BAR_CLEAR = '#side > div._3gYev > div > div._1EUay > span > div'
+    BACK_CHAT = '#side > div._3gYev > div > div._1EUay > button'
 
     NO_CONTACTS_FOUND = 'div[aria-live="polite"]'
 
     INFO_DRAWER = '#app > div > div > div:nth-child(6)'
-    INFO_DRAWER_BODY = f'{INFO_DRAWER} section'
+    INFO_DRAWER_BODY = '#app > div > div > div._2Ts6i._1xFRo > span > div > span > div > div > section'
 
     CONVERSATION_HEADER = 'header:has(div[title="Profile Details"])'
-    CONVERSATION_CURRENT = f'{CONVERSATION_HEADER} > div:nth-child(2) > div > div > span'
+    CONVERSATION_CURRENT = '#main > header > div._2au8k > div > div > div > span'
     CONVERSATION_MESSAGES = 'div.message-in'
     CONVERSATION_MENU = f'{CONVERSATION_HEADER} div[role="button"]:has(span[data-icon="menu"])'
     CONVERSATION_MUTED = f'{INFO_DRAWER} > div:nth-child(5) > div:nth-child(1) div[aria-label]'
@@ -36,12 +37,12 @@ class Sorce:
 
     MENU_PIN = f'{MENU_DROPDOWN} li > div[aria-label="Pin chat"]'
     PIN_ICON = f'{SEARCH_RESULT} span[data-icon="pinned2"]'
-    
+
     MESSAGE_CONTAINER = 'div'
     MESSAGE_INFO = 'div.copyable-text[data-pre-plain-text]'
-    MESSAGE_AUTHOR = 'div > span[aria-label]'
-    MESSAGE_CONTENT = 'span.selectable-text'
-    MESSAGE_META = f'div:nth-child(3) > div> div > div:last-child'
+    MESSAGE_AUTHOR = 'div._1BOF7._2AOIt > span[aria-label]'
+    MESSAGE_CONTENT = 'div.copyable-text > div > span._11JPr.selectable-text.copyable-text'
+    MESSAGE_META = 'div.cr2cog7z > span'
     MESSAGE_FORWARDED = 'span[data-icon="forwarded"]'
     MESSAGE_QUOTE = 'div[aria-label="Quoted Message"]'
     MESSAGE_LINK_PLACEHOLDER = 'span[data-icon="link-placeholder-dark"], span[data-icon="link-placeholder-light"]'
@@ -77,7 +78,7 @@ class Sorce:
     UNREAD_BADGE = 'span[aria-label="Unread"]'
     UNREAD_TITLE = 'span[title]'
     UNREAD_LAST_MESSAGE = 'div[role="gridcell"] + div span[title]'
-    UNREAD_CONVERSATIONS = 'div[aria-label="Chat list"] div[role="listitem"]:has(span[aria-label="Unread"])'
+    UNREAD_CONVERSATIONS = '#pane-side > div:nth-child(3) > div > div > div:has(span[aria-label="Unread"])'
 
     MY_PROFILE_PAGE = '#app > div > div > div:nth-child(4)'
     MY_PROFILE_TEXT = f'{MY_PROFILE_PAGE} span.selectable-text.copyable-text > span[dir="ltr"]'

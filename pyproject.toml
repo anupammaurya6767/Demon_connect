@@ -1,9 +1,9 @@
 [tool.poetry]
 name = "demon_connect"
-version = "1.0.0"
+version = "1.0.3"
 description = "Welcome to Demon Connect - WhatsApp API, your powerful tool for unleashing the potential of WhatsApp in your applications. This API allows you to integrate WhatsApp messaging into your projects with ease."
 authors = ["anupam maurya <anupammaurya981@gmail.com>", "tarun jain <tarunjainjain11@gmail.com>"]
-maintainers = ["tarun jain <tarunjainjain11@,gmail.com>", "Aditya Balasubramanian <adityabala2005@gmail.com>", "Nikhil Gupta <nikhil20047@gmail.com>"]
+maintainers = ["tarun jain <tarunjainjain11@gmail.com>", "Aditya Balasubramanian <adityabala2005@gmail.com>", "Nikhil Gupta <nikhil20047@gmail.com>"]
 readme = "README.md"
 license = "MIT"
 repository = "https://github.com/anupammaurya6767/Demon_connect"
@@ -12,7 +12,7 @@ keywords=["demon_connect","python-whatsapp","PyWhatsApp","pywhatsapp","python-wh
 classifiers=["Development Status :: 3 - Alpha","Intended Audience :: Developers","Topic :: Software Development :: Build Tools","Programming Language :: Python :: 3.10","Programming Language :: Python :: 3.11"]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.11"
 qrcode = "^7.3"
 selenium = "^4.13.0"
 webdriver-manager = "^3.4.2"
@@ -24,6 +24,7 @@ bs4 = "^0.0.1"
 moviepy = "^1.0.3"
 colorama = "^0.4.4"
 datefinder = "^0.7.3"
+requests = "^2.31.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

@@ -15,3 +15,4 @@ moviepy==1.0.3  # For video processing
 imageio[ffmpeg]==2.9.0  # For image and video handling
 colorama==0.4.4
 datefinder==0.7.3
+requests==2.31.0

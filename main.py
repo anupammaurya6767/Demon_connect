@@ -1,8 +1,5 @@
 # main.py
 from __future__ import annotations
-from demon_connect.utils.constants import BROWSER
-from demon_connect.utils.constants import USR_DIR
-from demon_connect.utils.constants import CHROME_DRIVER_PATH
 from demon_connect.whatsapp_api import Demon
 from colorama import Fore, Style
 # Define colors
@@ -24,18 +21,23 @@ def main():
 
 
         # Create an instance of the Demon class
-        #whatsapp_demon = Demon(BROWSER,USR_DIR,CHROME_DRIVER_PATH)
+        whatsapp_demon = Demon()
+
+        @whatsapp_demon.event
+        def on_ready():
+          print("Demon is ready")
+
+        @whatsapp_demon.event
+        def on_message(chat):
+          print(f"New message from {chat.name}: {chat.message}")
 
         # Log in to WhatsApp Web
-        #whatsapp_demon.login()
+        whatsapp_demon.login()
 
-        # @whatsapp_demon.event
-        # def on_message(chat):
-        #     print(f"New message from {chat.name}: {chat.message}")
-        
-        # @whatsapp_demon.event
-        # def on_ready():
-        #     print("Demon is ready")
+        chat = whatsapp_demon.open("Anurag")
+
+        # Send a message
+        chat.send("Hello!")
 
         # Send a message
         # message = "heyy"
