@@ -1,0 +1,45 @@
+name: 🐞 Bug Fix Pull Request 🕷️
+description: Submit a pull request to fix a bug
+
+body:
+  - type: textarea
+    attributes:
+      label: 📝 Describe the bug you're fixing
+      placeholder: |
+        A clear and concise description of the bug you're fixing. 🐛
+  - type: textarea
+    attributes:
+      label: 🔄 Steps to Reproduce (if applicable)
+      placeholder: |
+        Steps to reproduce the bug before the fix. 🚶
+  - type: textarea
+    attributes:
+      label: 🚀 Expected behavior (if applicable)
+      placeholder: |
+        A clear and concise description of what you expected to happen. 🌠
+  - type: input
+    attributes:
+      label: 🌟 Issue Number
+      description: Link to the related issue (e.g., #123).
+      placeholder: |
+        If this PR resolves a specific issue, please reference it here.
+  - type: markdown
+    attributes:
+      value: |
+        ## 🌍 Environment (please complete the following information):
+  - type: input
+    attributes:
+      label:  🌟 pywa version
+      placeholder: e.g. 0.5.0
+  - type: input
+    attributes:
+      label:  🐍 Python version
+      placeholder: e.g. 3.10.0
+  - type: input
+    attributes:
+      label:  💻 Operating System
+      placeholder: e.g. Windows 11
+  - type: textarea
+    attributes:
+      label: 📚 Additional context
+      description: Add any other context about the bug fix here. 📖
