@@ -66,7 +66,7 @@ Unleash the demon within as you explore the capabilities of this WhatsApp API. T
     from demon_connect.whatsapp_api import Demon
 
     # Initialize the API
-    whatsapp_api = Demon()
+    whatsapp_demon = Demon()
 
     # Log in to WhatsApp Web
     whatsapp_demon.login()
