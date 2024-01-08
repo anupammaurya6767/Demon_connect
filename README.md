@@ -18,9 +18,12 @@
 <a href="https://demon-connect.readthedocs.io">
     <img alt="Static Badge" src="https://img.shields.io/badge/Docs-Demon-rgb?style=plastic&labelColor=black" alt="Docs">
 </a>&nbsp;
-<img src="https://img.shields.io/github/license/anupammaurya6767/Demon_connect?style=plastic&labelColor=black&color=yellow" alt="License" ><a href="#license" /></img>&nbsp;
+<a href="LICENSE">
+    <img src="https://img.shields.io/github/license/anupammaurya6767/Demon_connect?style=plastic&labelColor=black&color=yellow" alt="License">
+</a>&nbsp;
 <img alt="GitHub forks" src="https://img.shields.io/github/forks/anupammaurya6767/Demon_connect?style=plastic&labelColor=black&color=blue">&nbsp;
-<a href="https://chat.whatsapp.com/FGV7ef4d9tNGtfN8HDvbim">&nbsp;<img src="https://badges.aleen42.com/src/whatsapp.svg?style=plastic&labelColor=black" alt="Whatsapp" /></a>
+<a href="https://chat.whatsapp.com/FGV7ef4d9tNGtfN8HDvbim">&nbsp;
+<img src="https://badges.aleen42.com/src/whatsapp.svg?style=plastic&labelColor=black" alt="Whatsapp" /></a>
 </p>
 
 ## Overview 👹
