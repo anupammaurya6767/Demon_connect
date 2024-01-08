@@ -1,14 +1,14 @@
 # 🌟 Demon Connect - WhatsApp API 🌟
 
-<img align='right' src="https://github.com/anupammaurya6767/Demon_connect/blob/main/main.png" width="230">
+<img align='right'src="https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/main.png" width="230">
 
 <p align="center">
-  <a href="#Overview">Overview</a> •
-  <a href="#Features">Features</a> •
-  <a href="#Usage">Usage</a> •
-  <a href="#Installation">Installation</a> •
-  <a href="#Contributing">Contributing</a> •
-  <a href="#License">License</a>
+  <a href="#overview-">Overview</a> •
+  <a href="#features-">Features</a> •
+  <a href="#usage-">Usage</a> •
+  <a href="#installation-">Installation</a> •
+  <a href="#contributing-">Contributing</a> •
+  <a href="#license-">License</a>
 </p>
 <br/>
 <p align="center">
@@ -22,13 +22,22 @@
 
 ## Overview 👹
 
-Welcome to **Demon Connect - WhatsApp API**, your powerful tool for unleashing the potential of WhatsApp in your applications. This API allows you to integrate WhatsApp messaging into your projects with ease.
+**Demon Connect - WhatsApp API** is the ultimate tool for WhatsApp magic. 🧙‍♂️
 
-<p align="center">
-  <img src="https://github.com/anupammaurya6767/Demon_connect/blob/main/sc1.jpeg" alt="Demon Connect Screenshot">
-</p>
+With this API, you can:
 
-Unleash the demon within as you explore the capabilities of this WhatsApp API. Transform your digital experience with the magic of **Demon Connect**.
+- Send and receive texts, images, and videos through WhatsApp
+- Join WhatsApp group chats and interact with other users
+- Customize the API to fit your project’s needs
+
+**Demon Connect** is perfect for any app that wants to improve customer engagement, automate messaging, or just have fun with WhatsApp API.
+
+Ready to start your adventure with **Demon Connect**? Join us today and unleash the power of WhatsApp in your apps! 🔥
+
+## API Documentation 📚
+
+This project provides a powerful API for interacting with WhatsApp Web. The API is implemented in the `whatsapp_api.py` module and is documented in detail in the [API Documentation]((Documentation/API.md)).
+
 
 ## Features ✨
 
@@ -51,7 +60,7 @@ Unleash the demon within as you explore the capabilities of this WhatsApp API. T
 4. Explore advanced features and customization options.
 
 <p align="center">
-  <img src="https://github.com/anupammaurya6767/Demon_connect/blob/main/sc2.jpeg" alt="Demon Connect Demo">
+   <img src="https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/sc2.jpeg" alt="Demon Connect Demo">
 </p>
 
 ## Installation 🧙‍♂️
@@ -104,11 +113,27 @@ Unleash the demon within as you explore the capabilities of this WhatsApp API. T
 
    ```
 
+
 ## Contributing 🌟
+First off, thank you for considering contributing to our project! 🎉 We value all our contributors and we’re excited to see how you can make this project even better.
 
-Contributions are welcome! Feel free to open issues and pull requests to enhance the API's power.
+Before you start, we ask everyone to adhere to our [Code of Conduct](CODE_OF_CONDUCT.md). It’s important to us that we maintain a positive and inclusive environment for everyone in our community.
 
-## Contributors
+Next, take a moment to familiarize yourself with our [API Documentation](Documentation/API.md). Understanding the API is key to making meaningful contributions.
+
+We also have a specific [workflow for contributions](WORKFLOW.md). This will give you an understanding of how we like to do things and make it easier for us to integrate your contributions.
+
+Now, you’re ready to start contributing! Whether it’s enhancing features, fixing bugs, or improving documentation, every contribution counts. Remember, the best way to contribute is to start small. Find a task in the project that you feel comfortable with and start there.
+
+If you ever get stuck or need help, don’t hesitate to reach out. We’re a community, and we’re here to help each other. You can join our community [WhatsApp group](https://chat.whatsapp.com/FGV7ef4d9tNGtfN8HDvbim). Happy coding! 😊
+
+
+## Security Policy 🔒
+
+We take the security of our project seriously. For details on which versions of the project are currently being supported with security updates and how to report a vulnerability, please see our [Security Policy](SECURITY.md).
+
+
+## Contributors 🤝
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -127,7 +152,7 @@ Contributions are welcome! Feel free to open issues and pull requests to enhance
 This project is licensed under the **WhatsApp API License**. See the [LICENSE](LICENSE) file for details.
 
 <p align="center">
-  <img src="https://github.com/anupammaurya6767/Demon_connect/blob/main/image.png" alt="API License Seal">
+   <img src="https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/image.png" alt="API License Seal">
 </p>
 
 Unlock the potential of WhatsApp in your applications with **Demon Connect - WhatsApp API**!
