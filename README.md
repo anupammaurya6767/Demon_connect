@@ -38,7 +38,7 @@ With this API, you can:
 
 **Demon Connect** is perfect for any app that wants to improve customer engagement, automate messaging, or just have fun with WhatsApp API.
 
-Ready to start your adventure with **Demon Connect**? Join us today and unleash the power of WhatsApp in your apps! 🔥
+Ready to start your adventure with **Demon Connect**? Join us today and unleash the power of WhatsApp in your apps!🔥
 
 <br/>
 
