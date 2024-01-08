@@ -6,18 +6,21 @@
   <a href="#overview-">Overview</a> •
   <a href="#features-">Features</a> •
   <a href="#usage-">Usage</a> •
-  <a href="#installation">Installation</a>
+  <a href="#installation">Installation</a> •
   <a href="#contributing-">Contributing</a> •
   <a href="#license-">License</a>
 </p>
 <br/>
 <p align="center">
 <a href="https://pypi.org/project/demon-connect/">
-  <img src="https://img.shields.io/badge/demon-connect?logo=pypi&logoColor=blue&label=demon-connect&labelColor=white&color=black" alt="Demon" />
-</a>
-<img src="https://readthedocs.org/projects/demon_connect/badge/?version=latest" alt="Docs" ><a href="https://demon-connect.readthedocs.io/" /></img>
-<img src="https://img.shields.io/github/license/anupammaurya6767/Demon_connect" alt="License" ><a href="#" /></img>
-<a href="https://chat.whatsapp.com/FGV7ef4d9tNGtfN8HDvbim"><img src="https://badges.aleen42.com/src/whatsapp.svg" alt="Whatsapp" /></a>
+  <img src="https://img.shields.io/badge/demon-connect?style=plastic&logo=pypi&logoColor=blue&label=demon-connect&labelColor=white&color=black" alt="Demon" />
+</a>&nbsp;
+<a href="https://demon-connect.readthedocs.io">
+    <img alt="Static Badge" src="https://img.shields.io/badge/Docs-Demon-rgb?style=plastic&labelColor=black" alt="Docs">
+</a>&nbsp;
+<img src="https://img.shields.io/github/license/anupammaurya6767/Demon_connect?style=plastic&labelColor=black&color=yellow" alt="License" ><a href="#" /></img>&nbsp;
+<img alt="GitHub forks" src="https://img.shields.io/github/forks/anupammaurya6767/Demon_connect?style=plastic&labelColor=black&color=blue">&nbsp;
+<a href="https://chat.whatsapp.com/FGV7ef4d9tNGtfN8HDvbim">&nbsp;<img src="https://badges.aleen42.com/src/whatsapp.svg?style=plastic&labelColor=black" alt="Whatsapp" /></a>
 </p>
 
 ## Overview 👹
@@ -34,10 +37,13 @@ With this API, you can:
 
 Ready to start your adventure with **Demon Connect**? Join us today and unleash the power of WhatsApp in your apps! 🔥
 
+<br/>
+
 ## API Documentation 📚
 
 This project provides a powerful API for interacting with WhatsApp Web. The API is implemented in the `whatsapp_api.py` module and is documented in detail in the [API Documentation]((Documentation/API.md)).
 
+<br/>
 
 ## Features ✨
 
@@ -47,7 +53,9 @@ This project provides a powerful API for interacting with WhatsApp Web. The API 
 
 🚀 **Group Messaging**: Engage with WhatsApp group chats via the API.
 
-🪄 **Customization**: Customize and extend the API to suit your project's needs.
+🔧 **Customization**: Customize and extend the API to suit your project's needs.
+
+<br/>
 
 ## Usage 📱
 
@@ -62,6 +70,8 @@ This project provides a powerful API for interacting with WhatsApp Web. The API 
 <p align="center">
    <img src="https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/sc2.jpeg" alt="Demon Connect Demo">
 </p>
+
+<br/>
 
 ## Installation <a name="installation"></a>🧙‍♂️
 
@@ -113,6 +123,7 @@ This project provides a powerful API for interacting with WhatsApp Web. The API 
 
    ```
 
+<br/>
 
 ## Contributing 🌟
 First off, thank you for considering contributing to our project! 🎉 We value all our contributors and we’re excited to see how you can make this project even better.
@@ -127,11 +138,13 @@ Now, you’re ready to start contributing! Whether it’s enhancing features, fi
 
 If you ever get stuck or need help, don’t hesitate to reach out. We’re a community, and we’re here to help each other. You can join our community [WhatsApp group](https://chat.whatsapp.com/FGV7ef4d9tNGtfN8HDvbim). Happy coding! 😊
 
+<br/>
 
 ## Security Policy 🔒
 
 We take the security of our project seriously. For details on which versions of the project are currently being supported with security updates and how to report a vulnerability, please see our [Security Policy](SECURITY.md).
 
+<br/>
 
 ## Contributors 🤝
 
@@ -146,6 +159,8 @@ We take the security of our project seriously. For details on which versions of 
 <a href="https://github.com/anupammaurya6767/Demon_connect/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=anupammaurya6767/Demon_connect" />
 </a>
+
+<br/>
 
 ## License 📜
 
