@@ -6,7 +6,7 @@
   <a href="#overview-">Overview</a> •
   <a href="#features-">Features</a> •
   <a href="#usage-">Usage</a> •
-  <a href="#installation-">Installation</a> •
+  <a href="#installation">Installation</a>
   <a href="#contributing-">Contributing</a> •
   <a href="#license-">License</a>
 </p>
@@ -63,7 +63,7 @@ This project provides a powerful API for interacting with WhatsApp Web. The API 
    <img src="https://github.com/anupammaurya6767/Demon_connect/blob/main/assets/sc2.jpeg" alt="Demon Connect Demo">
 </p>
 
-## Installation 🧙‍♂️
+## Installation <a name="installation"></a>🧙‍♂️
 
 1. Install Demon Connect via pip:
    ```bash
