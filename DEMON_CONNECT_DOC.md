@@ -18,6 +18,7 @@ Unleash the demon within to navigate the WhatsApp Web universe and experience th
 ```python
 whatsapp_demon = Demon(browser='chrome', browser_path='path/to/browser', driver_path='path/to/driver')
 ```
+<br/>
 
 ### `load_driver(self)`
 
@@ -29,6 +30,7 @@ whatsapp_demon = Demon(browser='chrome', browser_path='path/to/browser', driver_
 ```python
 whatsapp_demon.load_driver()  # Prepare the gateway to WhatsApp Web! 🪄
 ```
+<br/>
 
 ### `login(self)`
 
@@ -38,6 +40,7 @@ whatsapp_demon.load_driver()  # Prepare the gateway to WhatsApp Web! 🪄
 ```python
 whatsapp_demon.login()  # Begin your epic quest! 🛡️
 ```
+<br/>
 
 ### `send_message(self, contact_name: str, message: str)`
 
@@ -50,6 +53,7 @@ whatsapp_demon.login()  # Begin your epic quest! 🛡️
 ```python
 whatsapp_demon.send_message("Fellow Adventurers", "Brace yourselves, a new quest awaits! 🌄")
 ```
+<br/>
 
 ### `send_image(self, contact_name: str, picture: Path, message: Optional[str] = None)`
 
@@ -63,6 +67,7 @@ whatsapp_demon.send_message("Fellow Adventurers", "Brace yourselves, a new quest
 ```python
 whatsapp_demon.send_image("Fellow Explorers", "path/to/your/image.jpg", "A glimpse of our adventure! 📸")
 ```
+<br/>
 
 ### `send_video(self, contact_name: str, video: Path, message: Optional[str] = None)`
 
@@ -76,6 +81,7 @@ whatsapp_demon.send_image("Fellow Explorers", "path/to/your/image.jpg", "A glimp
 ```python
 whatsapp_demon.send_video("Adventurers Guild", "path/to/your/video.mp4", "Our adventures await! 🌟")
 ```
+<br/>
 
 ### `delete_message(self, group_name: str, message: str)`
 
@@ -88,6 +94,7 @@ whatsapp_demon.send_video("Adventurers Guild", "path/to/your/video.mp4", "Our ad
 ```python
 whatsapp_demon.delete_message("Secret Society", "This message is better left unsaid.")
 ```
+<br/>
 
 ### `tag_all(self, group_name: str)`
 
@@ -99,6 +106,7 @@ whatsapp_demon.delete_message("Secret Society", "This message is better left uns
 ```python
 whatsapp_demon.tag_all("Guild Members")  # Gather, brave souls! 🚀
 ```
+<br/>
 
 ### `get_list_of_messages(self)`
 
@@ -112,6 +120,7 @@ messages = whatsapp_demon.get_list_of_messages()
 for message in messages:
     print(f"Sender: {message.sender}, Timestamp: {message.timestamp}, Content: {message.content}")
 ```
+<br/>
 
 ### `send_file(self, contact_name: str, filename: Path, message: Optional[str] = None)`
 
@@ -125,6 +134,7 @@ for message in messages:
 ```python
 whatsapp_demon.send_file("Scroll Keepers", "path/to/ancient-scroll.pdf", "The wisdom of the ancients. 📜")
 ```
+<br/>
 
 ### `fetch_all_unread_chats(self, limit: bool = True, top: int = 50)`
 
@@ -137,6 +147,7 @@ whatsapp_demon.send_file("Scroll Keepers", "path/to/ancient-scroll.pdf", "The wi
 ```python
 unread_chats = whatsapp_demon.fetch_all_unread_chats(top=10)  # The uncharted chats reveal their secrets! 🌟
 ```
+<br/>
 
 ### `logout(self)`
 
@@ -146,14 +157,13 @@ unread_chats = whatsapp_demon.fetch_all_unread_chats(top=10)  # The uncharted ch
 ```python
 whatsapp_demon.logout()  # Farewell, brave adventurer! Your journey continues elsewhere. 🏰
 ```
+<br/>
 
 ### `close(self)`
 
 - **👋 Purpose**: Close the magical gateway, freeing your browser from the spells and releasing the captive resources. Break the spell of the digital world! 👋
 
-**
-
-Usage Example**:
+**Usage Example**:
 ```python
 whatsapp_demon.close()  # Farewell, until we meet again! 👋
 ```
