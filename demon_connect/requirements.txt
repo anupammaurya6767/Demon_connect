@@ -3,7 +3,7 @@ selenium==4.13.0  # For web automation
 webdriver-manager==3.4.2  # For managing web driver executables
 
 # For working with WhatsApp Web
-Pillow==10.0.1  # For image handling
+Pillow==10.2.0  # For image handling
 typing-extensions==3.10.0.2  # For 'Literal' type hint
 
 # For file and directory operations
